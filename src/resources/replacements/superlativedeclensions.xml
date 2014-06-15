@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<superlativedeclensions>
+  <!-- general data -->
+  <prefix>[\wàáãâéêíóõôúç]+</prefix>
+  <tag>n|n-adj|adj</tag>
+  <!-- superlative conversion rules to normal -->
+  <replacement target="abillíssimo" tag="n|n-adj|adj">ável</replacement>
+  <replacement target="císsimo" tag="n|n-adj|adj">z</replacement>
+  <replacement target="díssimo" tag="n|n-adj|adj">do</replacement>
+  <replacement target="ebillíssimo" tag="n|n-adj|adj">ével</replacement>
+  <replacement target="ibillíssimo" tag="n|n-adj|adj">ível</replacement>
+  <replacement target="íssimo" tag="n|n-adj|adj" exceptions="fortíssimo">o</replacement>
+  <replacement target="íssimo" tag="n|n-adj|adj">e</replacement>
+  <replacement target="obillíssimo" tag="n|n-adj|adj">óvel</replacement>
+  <replacement target="quíssimo" tag="n|n-adj|adj">co</replacement>
+  <replacement target="ubillíssimo" tag="n|n-adj|adj">úvel</replacement>
+  <replacement target="malíssimo" tag="n|n-adj|adj">mau</replacement>
+</superlativedeclensions>

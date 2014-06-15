@@ -1,0 +1,44 @@
+%
+% This data is free software: you can redistribute it and/or modify
+% it under the terms of the GNU General Public License as published by
+% the Free Software Foundation, either version 3 of the License, or
+% (at your option) any later version.
+% 
+% This program is distributed in the hope that it will be useful,
+% but WITHOUT ANY WARRANTY; without even the implied warranty of
+% MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+% GNU General Public License for more details.
+% 
+% You should have received a copy of the GNU General Public License
+% along with this program.  If not, see <http://www.gnu.org/licenses/>.
+% 
+crisólito,crisólito.N:ms
+crisólitos,crisólito.N:mp
+fim-de-semana,fim-de-semana.N:ms
+fins-de-semana,fim-de-semana.N:mp
+guarda-redes,guarda-redes.N:ms
+louca,louco.ADJ+z1:fs
+loucas,louco.ADJ+z1:fp
+matéria-prima,matéria-prima.N:fs
+matérias-primas,matéria-prima.N:fp
+maus-tratos,maus-tratos.N:mp
+meia-final,meia-final.N,fs
+meias-finais,meia-final.N,fp
+montanha-russa,montanha-russa.N:fs
+montanhas-russas,montanha-russa.N:fp
+oitavos-de-final,oitavos-de-final.N,mp
+pára-quedas,pára-quedas.N:ms
+primeira-dama,primeira-dama.N:fs
+primeiras-damas,primeira-dama.N:fp
+quarta-feira,quarta-feira.N:fs
+quartas-feiras,quarta-feira.N:fp
+quartos-de-final,quartos-de-final.N,mp
+quinta-feira,quinta-feira.N:fs
+quintas-feiras,quinta-feira.N:fp
+relações-públicas,relações-públicas.N:fp
+segunda-feira,segunda-feira.N:fs
+segundas-feiras,segunda-feira.N:fp
+sexta-feira,sexta-feira.N:fs
+sextas-feiras,sexta-feira.N:fp
+terça-feira,terça-feira.N:fs
+terças-feiras,terça-feira.N:fp
