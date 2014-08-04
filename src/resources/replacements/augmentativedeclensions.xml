@@ -2,7 +2,6 @@
 <augmentativedeclensions>
   <!-- general data -->
   <prefix>[\wàáãâéêíóõôúç\-]*</prefix>
-  <tag>n|n-adj|adj</tag>
   <!-- augmentative conversion rules to normal -->
   <replacement target="aço" tag="n|n-adj|adj" exceptions="aço|antebraço|baraço|braço|calhamaço|cansaço|embaraço|espaço|inchaço|laço|paço|palhaço|pedaço|traço">o</replacement>
   <replacement target="adão" tag="n|n-adj|adj" exceptions="cidadão">o</replacement>
@@ -15,3 +14,71 @@
   <replacement target="ázio" tag="n|n-adj|adj" exceptions="topázio">o</replacement>
   <replacement target="zão" tag="n|n-adj|adj" exceptions="razão"></replacement>
 </augmentativedeclensions>
+
+
+<!--
+ Grau diminutivo
+
+-acho – rio - riacho
+-inho – livro - livrinho
+- ote – caixa – caixote
+- ejo – lugar – lugarejo
+-(z)inho – jardim – jardinzinho
+- ebre – casa – casebre
+- eta – sala -saleta
+- isco – chuva - chuvisco
+
+Grau aumentativo
+
+- aço – jogaço
+- anzil – corpanzil
+- ão – gatão
+- ázio – copázio
+- uça – dentuça
+- ona -  mulherona
+-  arra – bocarra
+- orra – cabeçorra
+- az – pratalhaz
+
+
+
+
+
+
+    -aça, -aço: barbaça, barcaça, fumaça, bagaço, estilhaço, ricaço, golaço,
+    -alha: fornalha
+    -anzil: corpanzil
+    -ão (-ona), -alhão: salão, tapetão, paredão, mocetona, grandona, brincalhão,
+    -arão, -(z)arrão, eirão: vagalhão, casarão, homenzarrão, canzarrão, vozeirão, boqueirão
+    -arra, -orra, -orro: bocarra, naviarra, cabeçorra, beiçorra, beatorro, sapatorro
+    -aréu: fogaréu, povaréu
+    -astro: poetastro, medicastro
+    -az, -acaz, -alhaz, -araz, -arraz: cartaz, voraz, machacaz, facalhaz, montaraz, pratarraz
+    -ázio: copázio, gatázio, balázio
+    -uça: dentuça
+
+
+
+    aça: barcaça
+    alha: muralha
+    alhão: grandalhão
+    ama: poeirama
+    anca: bicanca // carranca
+    anzil: corpanzil
+    ão: lobão // caldeirão //
+    arra: naviarra
+    asco: penhasco
+    astro: poetrasto
+    az: fatacaz (fatia grande)
+    ázio: copázio
+    eima: guloseima
+    ento: farturento // corpulento
+    eirão: vozeirão // chapeirão
+    ola: beiçola
+    orra: cabeçorra
+    uça: dentuça
+    zarrão: homenzarrão
+
+
+
+-->

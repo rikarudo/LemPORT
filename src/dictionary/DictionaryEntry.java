@@ -4,7 +4,7 @@ package dictionary;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9
+ * @version  0.9.1
  */
 public class DictionaryEntry {
   private String inflectedForm = null;
@@ -132,8 +132,7 @@ public class DictionaryEntry {
     result = prime * result
         + ((inflectedForm == null) ? 0 : inflectedForm.hashCode());
     result = prime * result + ((lemma == null) ? 0 : lemma.hashCode());
-    result = prime
-        * result
+    result = prime * result
         + ((morphAttributes == null) ? 0 : morphAttributes.hashCode());
     result = prime * result
         + ((partOfSpeech == null) ? 0 : partOfSpeech.hashCode());

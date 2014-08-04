@@ -9,7 +9,7 @@ import replacement.Replacement;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9
+ * @version  0.9.1
  */
 public class GenderNormalizer extends Normalizer {
   /**
@@ -95,8 +95,8 @@ public class GenderNormalizer extends Normalizer {
     // using gender specific nouns
     if (this.checkFlag(NOUNS) && !matchFound) {
       for (int i = 0; i < nouns.length; i++) {
-        if (nounTargets[i].matcher(normalization).matches() &&
-            nounTags[i].matcher(tag.toLowerCase()).matches()) {
+        if (nounTargets[i].matcher(normalization).matches()
+            && nounTags[i].matcher(tag.toLowerCase()).matches()) {
           normalization = nouns[i].getReplacement();
           matchFound = true;
           break;
@@ -106,9 +106,9 @@ public class GenderNormalizer extends Normalizer {
     // using gender declensions
     if (this.checkFlag(DECLENSIONS) && !matchFound) {
       for (int i = 0; i < declensions.length; i++) {
-        if (declensionTargets[i].matcher(normalization).matches() &&
-            declensionTags[i].matcher(tag.toLowerCase()).matches() &&
-            !declensionExceptions[i].matcher(normalization).matches()) {
+        if (declensionTargets[i].matcher(normalization).matches()
+            && declensionTags[i].matcher(tag.toLowerCase()).matches()
+            && !declensionExceptions[i].matcher(normalization).matches()) {
           normalization = normalization.substring(0,
               normalization.length() - declensions[i].getTarget().length())
               + declensions[i].getReplacement();

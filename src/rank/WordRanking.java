@@ -12,7 +12,7 @@ import java.util.HashMap;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9
+ * @version  0.9.1
  */
 public class WordRanking {
   private HashMap<String, WordListEntry> wordMap = null;

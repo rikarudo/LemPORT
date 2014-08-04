@@ -17,8 +17,10 @@ public class LemmatizerExample {
   public static void main(String[] args) {
     System.out.println("Starting...");
     Lemmatizer lemmatizer = null;
-    String[] tokens = {"Era", "uma", "vez", "um", "gato", "maltês", "."};
-    String[] tags = {"v-fin", "art", "n", "art", "n", "adj", "punc"};
+    String[] tokens = {"Era", "uma", "vez", "um", "gato", "maltês", ",",
+        "tocava", "piano", "e", "falava", "francês", "."};
+    String[] tags = {"v-fin", "art", "n", "art", "n", "adj", "punc", "v-inf",
+        "n", "conj-c", "v-fin", "n", "punc"};
 
     try {
       lemmatizer = new Lemmatizer();
@@ -65,7 +67,7 @@ public class LemmatizerExample {
     }
 
     System.out.println(buffer.toString().trim());
-    
+
     System.out.println("Done!");
   }
 }

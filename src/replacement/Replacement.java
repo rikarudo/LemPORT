@@ -19,7 +19,7 @@ import org.xml.sax.SAXException;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9
+ * @version  0.9.1
  */
 public class Replacement implements Comparable<Replacement> {
 
@@ -344,24 +344,6 @@ public class Replacement implements Comparable<Replacement> {
     }
     return replacements;
   }
-
-  /*
-
-    public static String readSuffix(InputStream replacementInput)
-      throws ParserConfigurationException, SAXException, IOException {
-    String prefix = new String();
-    DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
-    DocumentBuilder db = dbf.newDocumentBuilder();
-    Document doc = db.parse(replacementInput);
-    doc.getDocumentElement().normalize();
-    NodeList entries = doc.getElementsByTagName("sufix");
-    if (entries.getLength() > 0) {
-      prefix = entries.item(0).getTextContent();
-    }
-    return prefix;
-  }
-
-   */
 
   private int computeNormalizedTargetLength(String target) {
     int normalizedLength = target.length();

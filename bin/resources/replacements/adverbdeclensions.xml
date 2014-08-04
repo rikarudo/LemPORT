@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <adverbdeclensions>
   <!-- general data -->
-  <prefix>[\wàáãâéêíóõôúç\-]+</prefix>
-  <tag>adv</tag>
+  <prefix>[\wàáãâéêíóõôúç\-]*</prefix>
   <!-- adverb conversions rule to normal form -->
   <replacement target="abiamente" tag="adv">ábio</replacement>
   <replacement target="abilmente" tag="adv">ábil</replacement>

@@ -9,7 +9,7 @@ import replacement.Replacement;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9
+ * @version  0.9.1
  */
 public class AugmentativeNormalizer extends Normalizer {
   private Pattern[] declensionExceptions = null;
@@ -49,9 +49,9 @@ public class AugmentativeNormalizer extends Normalizer {
   public String normalize(String token, String tag) {
     String normalization = token.toLowerCase();
     for (int i = 0; i < declensions.length; i++) {
-      if (declensionTargets[i].matcher(normalization).matches() &&
-          declensionTags[i].matcher(tag.toLowerCase()).matches() &&
-          !declensionExceptions[i].matcher(normalization).matches()) {
+      if (declensionTargets[i].matcher(normalization).matches()
+          && declensionTags[i].matcher(tag.toLowerCase()).matches()
+          && !declensionExceptions[i].matcher(normalization).matches()) {
         normalization = normalization.substring(0,
             normalization.length() - declensions[i].getTarget().length())
             + declensions[i].getReplacement();

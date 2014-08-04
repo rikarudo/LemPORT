@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <regularverbdeclensions>
   <!-- general data -->
-  <prefix>[\wàáãâéêíóõôúç\-]+</prefix>
-  <tag>v|v-fin|v-ger|v-pcp|v-inf</tag>
+  <prefix>[\wàáãâéêíóõôúç\-]*</prefix>
   <!-- inflection conversion rules to infinitive -->
   <!-- 1st conjugation -->
   <replacement target="a" tag="v|v-fin|v-ger|v-pcp|v-inf">ar</replacement>

@@ -1,7 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <gendernouns>
-  <!-- general data -->
-  <tag>n|n-adj|adj</tag>
   <!-- gender distinct words -->
   <replacement target="abadessa" tag="n|n-adj|adj">abade</replacement>
   <replacement target="abelha" tag="n|n-adj|adj">zangão</replacement>

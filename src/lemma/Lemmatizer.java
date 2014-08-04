@@ -29,7 +29,7 @@ import replacement.Replacement;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9
+ * @version  0.9.1
  */
 public class Lemmatizer {
   private static final String DEFAULT_PROP = "resources/properties/lemport.xml";
@@ -525,24 +525,24 @@ public class Lemmatizer {
               flags);
     }
     // use rules
-    if (this.checkFlag(ADVERB) &&
-        tag.toLowerCase().matches(adverbTag)) {
+    if (this.checkFlag(ADVERB)
+        && tag.toLowerCase().matches(adverbTag)) {
       lemma = adverbNormalizer.normalize(lemma, tag);
       if (lexicon.contains(lemma, lexPOSTag)) {
         cache.put(key, lemma);
         return lemma;          
       }
     }
-    if (this.checkFlag(NUMBER) &&
-        tag.toLowerCase().matches(numberTag)) {
+    if (this.checkFlag(NUMBER)
+        && tag.toLowerCase().matches(numberTag)) {
       lemma = numberNormalizer.normalize(lemma, tag);
       if (lexicon.contains(lemma, lexPOSTag)) {
         cache.put(key, lemma);
         return lemma;          
       }
     }
-    if (this.checkFlag(SUPERLATIVE) &&
-        tag.toLowerCase().matches(superlativeTag)) {
+    if (this.checkFlag(SUPERLATIVE)
+        && tag.toLowerCase().matches(superlativeTag)) {
       lemma = superlativeNormalizer.normalize(lemma, tag);
       if (lexicon.contains(lemma, lexPOSTag)) {
         cache.put(key, lemma);
@@ -557,24 +557,24 @@ public class Lemmatizer {
         return lemma;          
       }
     }
-    if (this.checkFlag(DIMINUTIVE) &&
-        tag.toLowerCase().matches(diminutiveTag)) {
+    if (this.checkFlag(DIMINUTIVE)
+        && tag.toLowerCase().matches(diminutiveTag)) {
       lemma = diminutiveNormalizer.normalize(lemma, tag);
       if (lexicon.contains(lemma, lexPOSTag)) {
         cache.put(key, lemma);
         return lemma;          
       }
     }
-    if (this.checkFlag(GENDER_ALL) &&
-        tag.toLowerCase().matches(genderTag)) {
+    if (this.checkFlag(GENDER_ALL)
+        && tag.toLowerCase().matches(genderTag)) {
       lemma = genderNormalizer.normalize(lemma, tag);
       if (lexicon.contains(lemma, lexPOSTag)) {
         cache.put(key, lemma);
         return lemma;          
       }
     }
-    else if (this.checkFlag(GENDER_DECLENSIONS) &&
-        tag.toLowerCase().matches(genderTag)) {
+    else if (this.checkFlag(GENDER_DECLENSIONS)
+        && tag.toLowerCase().matches(genderTag)) {
       lemma = genderNormalizer.normalize(lemma, tag,
           GenderNormalizer.DECLENSIONS);
       if (lexicon.contains(lemma, lexPOSTag)) {
@@ -582,8 +582,8 @@ public class Lemmatizer {
         return lemma;          
       }
     }
-    else if (this.checkFlag(GENDER_NOUNS) &&
-        tag.toLowerCase().matches(genderTag)) {
+    else if (this.checkFlag(GENDER_NOUNS)
+        && tag.toLowerCase().matches(genderTag)) {
       lemma = genderNormalizer.normalize(lemma, tag,
           GenderNormalizer.NOUNS);
       if (lexicon.contains(lemma, lexPOSTag)) {
@@ -591,8 +591,8 @@ public class Lemmatizer {
         return lemma;          
       }
     }
-    if (this.checkFlag(VERB) &&
-        tag.toLowerCase().matches(verbTag)) {
+    if (this.checkFlag(VERB)
+        && tag.toLowerCase().matches(verbTag)) {
       lemma = verbNormalizer.normalize(lemma, tag);
       if (lexicon.contains(lemma, lexPOSTag)) {
         cache.put(key, lemma);

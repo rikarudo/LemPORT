@@ -9,7 +9,7 @@ import replacement.Replacement;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9
+ * @version  0.9.1
  */
 public class VerbNormalizer extends Normalizer {
   private Pattern[] conjugationTargetsWithoutPrefixes = null;
@@ -89,8 +89,8 @@ public class VerbNormalizer extends Normalizer {
     if (!matchFound) {
       for (int i = 0; i < conjugations.length; i++) {
         if (conjugationTargetsWithoutPrefixes[i].matcher(
-            currentNormalization).matches() &&
-            conjugationTags[i].matcher(tag.toLowerCase()).matches()) {
+            currentNormalization).matches()
+            && conjugationTags[i].matcher(tag.toLowerCase()).matches()) {
           if (currentNormalization.split(
               conjugations[i].getTarget()).length > 0) {
             String verbPrefix = token.split(conjugations[i].getTarget())[0];
@@ -108,8 +108,8 @@ public class VerbNormalizer extends Normalizer {
     // from conjugations to lemmas (with prefixes)
     if (!matchFound) {
       for (int i = 0; i < conjugations.length; i++) {
-        if (conjugationTargets[i].matcher(currentNormalization).matches() &&
-            conjugationTags[i].matcher(tag.toLowerCase()).matches()) {
+        if (conjugationTargets[i].matcher(currentNormalization).matches()
+            && conjugationTags[i].matcher(tag.toLowerCase()).matches()) {
           // check whether the current conjugation is from a verb with a prefix
           // and appends it (the prefix) to the replacement
           if (currentNormalization.split(
@@ -130,8 +130,8 @@ public class VerbNormalizer extends Normalizer {
     if (!matchFound) {
       for (int i = 0; i < lexemes.length; i++) {
         if (lexemeTargetsWithoutPrefixes[i].matcher(
-            currentNormalization).matches() &&
-            lexemeTags[i].matcher(tag.toLowerCase()).matches()) {
+            currentNormalization).matches()
+            && lexemeTags[i].matcher(tag.toLowerCase()).matches()) {
           if (currentNormalization.split(lexemes[i].getTarget()).length > 0) {
             String verbPrefix = token.split(lexemes[i].getTarget())[0];
             normalization = verbPrefix + lexemes[i].getReplacement();
@@ -148,8 +148,8 @@ public class VerbNormalizer extends Normalizer {
     // from lexemes to lemmas (with prefixes)
     if (!matchFound) {
       for (int i = 0; i < lexemes.length; i++) {
-        if (lexemeTargets[i].matcher(currentNormalization).matches() &&
-            lexemeTags[i].matcher(tag.toLowerCase()).matches()) {
+        if (lexemeTargets[i].matcher(currentNormalization).matches()
+            && lexemeTags[i].matcher(tag.toLowerCase()).matches()) {
           // check whether the current lexeme is from a verb with a prefix
           // and appends it (the prefix) to the replacement
           if (currentNormalization.split(lexemes[i].getTarget()).length > 0) {
@@ -168,9 +168,9 @@ public class VerbNormalizer extends Normalizer {
     // from declensions to lemmas (when everything else fails)
     if (!matchFound) {
       for (int i = 0; i < declensions.length; i++) {
-        if (declensionTargets[i].matcher(normalization).matches() &&
-            declensionTags[i].matcher(tag.toLowerCase()).matches() &&
-            !declensionExceptions[i].matcher(normalization).matches()) {
+        if (declensionTargets[i].matcher(normalization).matches()
+            && declensionTags[i].matcher(tag.toLowerCase()).matches()
+            && !declensionExceptions[i].matcher(normalization).matches()) {
           normalization = normalization.substring(0,
               normalization.length() - declensions[i].getTarget().length())
               + declensions[i].getReplacement();

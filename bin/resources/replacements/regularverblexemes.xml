@@ -2,7 +2,6 @@
 <regularverblexemes>
   <!-- general data -->
   <prefix>(a|ab|abs|ad|ambi|ante?|auto|bem|ben|bene|circum|circun|co|com|con|contra|de|des|dis|e|em|en|entre|es|ex|extra|i|im|in|inter|intra|intro|justa|o|ob|pos|pre|pré|pressu|re|retro|semi|so|sob|sobre?|su|sub|super|supra|sus|tra|trans|tras|tres|ultra|vice|vis)\-?</prefix>
-  <tag>v|v-fin|v-ger|v-pcp|v-inf</tag>
   <suffix>[\wàáãâéêíóõôúç\-]*</suffix>
   <!-- A -->
   <replacement target="abaf[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">abafar</replacement>
@@ -1199,6 +1198,7 @@
   <replacement target="denomin[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">denominar</replacement>
   <replacement target="denot[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">denotar</replacement>
   <replacement target="densifi[cq][aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">densificar</replacement>
+  <replacement target="dent[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">dentar</replacement>
   <replacement target="denud[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">denudar</replacement>
   <replacement target="denunci[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">denunciar</replacement>
   <replacement target="depar[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">deparar</replacement>
@@ -2003,6 +2003,7 @@
   <replacement target="especul[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">especular</replacement>
   <replacement target="espelh[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">espelhar</replacement>
   <replacement target="esper[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">esperar</replacement>
+  <replacement target="esperan[cç][aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">esperançar</replacement>
   <replacement target="espern[eé][aáei]" tag="v|v-fin|v-ger|v-pcp|v-inf">espernear</replacement>
   <replacement target="espet[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">espetar</replacement>
   <replacement target="espetacul[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">espetacular</replacement>
@@ -2524,7 +2525,7 @@
   <replacement target="instal[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">instalar</replacement>
   <replacement target="instanci[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">instanciar</replacement>
   <replacement target="instaur[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">instaurar</replacement>
-  <replacement target="intermed(ei|i[aáe])[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">intermediar</replacement>
+  <replacement target="intermed(ei|i)[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">intermediar</replacement>
   <replacement target="instig[aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">instigar</replacement>
   <replacement target="institu[aeiío]" tag="v|v-fin|v-ger|v-pcp|v-inf">instituir</replacement>
   <replacement target="instru[aeiío]" tag="v|v-fin|v-ger|v-pcp|v-inf">instruir</replacement>
@@ -3141,7 +3142,7 @@
   <replacement target="profetiz[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">profetizar</replacement>
   <replacement target="prognosti[cq][aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">prognosticar</replacement>
   <replacement target="program[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">programar</replacement>
-  <replacement target="pro[ií][aeiío]" tag="v|v-fin|v-ger|v-pcp|v-inf">proíbir</replacement>
+  <replacement target="pro[ií]b[aeiío]" tag="v|v-fin|v-ger|v-pcp|v-inf">proibir</replacement>
   <replacement target="project[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">projectar</replacement>
   <replacement target="projet[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">projetar</replacement>
   <replacement target="prolifer[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">proliferar</replacement>
@@ -3613,6 +3614,7 @@
   <replacement target="se[cq][aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">secar</replacement>
   <replacement target="seculariz[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">secularizar</replacement>
   <replacement target="secund[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">secundar</replacement>
+  <replacement target="sed[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">sedar</replacement>
   <replacement target="sedi[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">sediar</replacement>
   <replacement target="sediment[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">sedimentar</replacement>
   <replacement target="seduz[aeiío]*" tag="v|v-fin|v-ger|v-pcp|v-inf">seduzir</replacement>
@@ -4131,3 +4133,6 @@
   <replacement target="tort[ao]s?" tag="v|v-fin|v-ger|v-pcp|v-inf">torcer</replacement>
   <replacement target="vag[ao]s?" tag="v|v-fin|v-ger|v-pcp|v-inf">vagar</replacement>
 </regularverblexemes>
+<!--
+a|ado|ai|ais|am|amos|ámos|ando|ar|ara|ará|aram|áramos|arão|aras|arás|ardes|arei|areis|áreis|arem|aremos|ares|aria|ariam|aríamos|arias|aríeis|armos|as|asse|ásseis|assem|ássemos|asses|aste|astes|ava|avam|ávamos|avas|áveis|e|ei|eis|em|emos|endo|er|era|erá|eram|êramos|erão|eras|erás|erdes|erei|ereis|êreis|erem|eremos|eres|eria|eriam|eríamos|erias|eríeis|ermos|es|esse|êsseis|essem|êssemos|esses|este|estes|eu|i|ia|iam|íamos|ias|ido|íeis|imos|indo|ir|ira|irá|iram|íramos|irão|iras|irás|irdes|irei|ireis|íreis|irem|iremos|ires|iria|iriam|iríamos|irias|iríeis|irmos|is|isse|ísseis|issem|íssemos|isses|iste|istes|iu|o|ou
+-->
