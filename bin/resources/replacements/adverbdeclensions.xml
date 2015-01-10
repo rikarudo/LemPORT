@@ -58,7 +58,7 @@
   <replacement target="icimamente" tag="adv">ícito</replacement>
   <replacement target="icuamente" tag="adv">ícuo</replacement>
   <replacement target="iculamente" tag="adv">ículo</replacement>
-  <replacement target="idamente" tag="adv" exceptions="distraído">ído</replacement>
+  <replacement target="idamente" tag="adv">ído</replacement>
   <replacement target="idicamente" tag="adv">ídico</replacement>
   <replacement target="iferamente" tag="adv">ífero</replacement>
   <replacement target="ifiamente" tag="adv">ífio</replacement>
@@ -84,7 +84,7 @@
   <replacement target="itimamente" tag="adv">ítimo</replacement>
   <replacement target="ivelmente" tag="adv">ível</replacement>
   <replacement target="ivocamente" tag="adv">ívoco</replacement>
-  <replacement target="mente" tag="adv"></replacement>
+  <replacement target="mente" tag="adv" exceptions="mente"></replacement>
   <replacement target="obilmente" tag="adv">óbil</replacement>
   <replacement target="ocilmente" tag="adv">ócil</replacement>
   <replacement target="ocrifamente" tag="adv">ócrifo</replacement>
