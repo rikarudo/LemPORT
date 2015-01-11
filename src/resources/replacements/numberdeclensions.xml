@@ -19,7 +19,7 @@
   <replacement target="ões" tag="n|n-adj|adj">ão</replacement>
   <replacement target="óis" tag="n|n-adj|adj">ol</replacement>
   <replacement target="res" tag="n|n-adj|adj" exceptions="abutres|arredores|árvores|balaústres|desastres|hectares|livres|mármores|massacres|mestres|padres|pedestres|pires|pobres|podres|poses|semilivres|terrestres|timbres">r</replacement>
-  <replacement target="s" tag="n|n-adj|adj" exceptions="adeus|alferes|ananás|arredores|atlas|bílis|b[óô]nus|quebra-cabeças|cais|caos|convés|crúcis|deus|férias|fezes|gás|génesis|lápis|libris|[óô]nus|ourives|mais|males|menos|mês|messias|oásis|[óô]nibus|opus|país|p[éê]nis|pêsames|pires|pós|praxis|pus|(\-redes)|reles|revés|simples|sífilis|t[éê]nis|trevas|vírus|s|[\wàáãâéêíóõôúç]+ês|((\d+h)?(\d+m))?\d+s"></replacement>
+  <replacement target="s" tag="n|n-adj|adj" exceptions="adeus|alferes|ananás|arredores|atlas|bílis|b[óô]nus|quebra-cabeças|cais|caos|convés|crúcis|deus|férias|fezes|gás|génesis|lápis|libris|[óô]nus|ourives|mais|males|menos|mês|messias|oásis|[óô]nibus|opus|país|p[éê]nis|pêsames|pires|pós|praxis|pus|(\-redes)|reles|revés|s|simples|sífilis|t[éê]nis|trevas|vírus|s|[\wàáãâéêíóõôúç]+ês|((\d+h)?(\d+m))?\d+s"></replacement>
   <replacement target="ses" tag="n|n-adj|adj" exceptions="análises|bases|crises|fases|frases|passes|[\wàáãâéêíóõôúç]+nses|[\wàáãâéêíóõôúç]+sses|[\wàáãâéêíóõôúç]*teses">s</replacement>
   <replacement target="uis" tag="n|n-adj|adj">ul</replacement>
   <replacement target="zes" tag="n|n-adj|adj" exceptions="fezes">z</replacement>
@@ -27,6 +27,6 @@
   <replacement target="ais" tag="art|pron|pron-pers|pron-det|pron-indp" exceptions="demais|mais">al</replacement>
   <replacement target="ns" tag="art|pron|pron-pers|pron-det|pron-indp">m</replacement>
   <replacement target="quaisquer" tag="art|pron|pron-pers|pron-det|pron-indp">qualquer</replacement>
-  <replacement target="s" tag="art|pron|pron-pers|pron-det|pron-indp" exceptions="ambas|ambos|demais|diversas|diversos|mais|menos|nós|várias|vários|vós"></replacement>
+  <replacement target="s" tag="art|pron|pron-pers|pron-det|pron-indp" exceptions="ambas|ambos|demais|diversas|diversos|mais|menos|nós|s|várias|vários|vós"></replacement>
 </numberdeclensions>
 <!-- http://www.ciberduvidas.com/pergunta.php?id=14650 -->

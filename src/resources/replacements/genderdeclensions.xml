@@ -34,12 +34,12 @@
   <replacement target="iva" tag="n|n-adj|adj" exceptions="classificativa|comitiva|conviva|dádiva|deriva|diva|estimativa|expectativa|iniciativa|ofensiva|perspectiva|prerrogativa|raiva|retrospectiva|saliva|tentativa">ivo</replacement>
   <replacement target="íza" tag="n|n-adj|adj">iz</replacement>
   <replacement target="na" tag="n|n-adj|adj" exceptions="acetona|amazona|antena|ardina|arena|aspirina|azeitona|banana|barbatana|boina|cabana|cabina|cana|caserna|cena|centena|chacina|cisterna|cocaína|coluna|cortisona|dezena|disciplina|doutrina|duna|esquina|fauna|fortuna|gabardina|gasolina|lacuna|lanterna|lona|máquina|maratona|margarina|matina|medicina|milena|mina|monótona|neblina|nicotina|oficina|oxitocina|página|paisana|pena|perna|pestana|piscina|plasticina|platina|propina|proteína|ruína|quinzena|roldana|rotina|[\wàáãâéêíóõôúç\-]*semana|serpentina|urna|usina|tuna|vacatura|vacina|vitamina|vitrina|zarabatana|zona">no</replacement>
-  <replacement target="qnhola" tag="n|n-adj|adj">qnhol</replacement>
+  <replacement target="nhola" tag="n|n-adj|adj">nhol</replacement>
   <replacement target="oga" tag="n|n-adj|adj" exceptions="sinagoga">ogo</replacement>
   <replacement target="ona" tag="n|n-adj|adj" exceptions="acetona|amazona|cortisona|lona|maratona|monótona|sanfona|zona">ão</replacement>
   <replacement target="ora" tag="n|n-adj|adj" exceptions="amora|demora|fora|hora|impressora|metáfora|metralhadora|mora|pólvora">or</replacement>
   <replacement target="osa" tag="n|n-adj|adj" exceptions="mucosa|prosa|rosa">oso</replacement>
-  <replacement target="ova" tag="n|n-adj|adj" exceptions="escova|(contra)?prova|supernova">ovo</replacement>
+  <replacement target="ova" tag="n|n-adj|adj" exceptions="escova|ova|(contra)?prova|supernova">ovo</replacement>
   <replacement target="unda" tag="n|n-adj|adj">undo</replacement>
   <replacement target="ura" tag="n|n-adj|adj" exceptions="(re)?abertura|abreviatura|agrura|altura|amargura|armadura|arquite(c)?tura||assinatura|aventura|brochura|candidatura|candura|cenoura|captura|censura|cintura|cobertura|conje(c)?tura|conjuntura|contra(c)?tura|costura|criatura|cura|ditadura|envergadura|escravatura|escritura|escultura|espessura|estatura|estrutura|factura|fartura|fechadura|feitura|figura|formatura|fractura|frescura|gordura|largura|legislatura|leitura|licenciatura|ligadura|literatura|loucura|mistura|partitura|pintura|postura|prefeitura|procura|releitura|quadratura|ruptura|sepultura|status|temperatura|tempura|ternura|tortura|viatura|[\wàáãâéêíóõôúç]*cultura|[\wàáãâéêíóõôúç\-]*estrutura">uro</replacement>
   <replacement target="uta" tag="n|n-adj|adj" exceptions="conduta|disputa|escuta|fruta|gruta|juta|luta|permuta|recruta|truta|[\wàáãâéêíóõôúç]+auta">uto</replacement>
