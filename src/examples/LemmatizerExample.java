@@ -19,7 +19,7 @@ public class LemmatizerExample {
     Lemmatizer lemmatizer = null;
     String[] tokens = {"Era", "uma", "vez", "um", "gato", "maltês", ",",
         "tocava", "piano", "e", "falava", "francês", "."};
-    String[] tags = {"v-fin", "art", "n", "art", "n", "adj", "punc", "v-inf",
+    String[] tags = {"v-fin", "art", "n", "art", "n", "adj", "punc", "v-fin",
         "n", "conj-c", "v-fin", "n", "punc"};
 
     try {
