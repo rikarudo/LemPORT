@@ -13,7 +13,7 @@ import java.util.Set;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.1
+ * @version  0.9.4
  */
 public class Lexicon {
   private HashMap<String, HashSet<String>> lexicon = null;
@@ -31,10 +31,10 @@ public class Lexicon {
    * 
    * @param  lexiconInput ...
    * @throws IOException ...
-   * @throws LexiconParsingException
+   * @throws LexiconLoadException ...
    */
   public Lexicon(InputStream lexiconInput)
-      throws IOException, LexiconParsingException {
+      throws IOException, LexiconLoadException {
     this();
     this.load(lexiconInput);
   }
@@ -43,11 +43,11 @@ public class Lexicon {
    * This method ...
    * 
    * @param  lexiconInput ...
-   * @throws IOException
-   * @throws LexiconParsingException
+   * @throws IOException ...
+   * @throws LexiconLoadException ...
    */
   public void load(InputStream lexiconInput)
-      throws IOException, LexiconParsingException {
+      throws IOException, LexiconLoadException {
     BufferedReader reader = new BufferedReader(
         new InputStreamReader(lexiconInput));
     String lemma = null;
@@ -80,7 +80,7 @@ public class Lexicon {
         }
         else {
           reader.close();
-          throw new LexiconParsingException(lineNumber + ": " + line);
+          throw new LexiconLoadException(lineNumber + ": " + line);
         }
       }
     }
@@ -176,7 +176,7 @@ public class Lexicon {
   /**
    * This method ...
    * 
-   * @param  partOfSpeech
+   * @param  partOfSpeech ...
    * @return ...
    */
   public String[] retrieveLexemes(String partOfSpeech) {
@@ -193,7 +193,7 @@ public class Lexicon {
   /**
    * This method ...
    * 
-   * @param  lexeme
+   * @param  lexeme ...
    * @return ...
    */
   public String[] retrievePartsOfSpeech(String lexeme) {

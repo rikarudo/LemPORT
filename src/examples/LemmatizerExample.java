@@ -8,8 +8,9 @@ import javax.xml.parsers.ParserConfigurationException;
 
 import org.xml.sax.SAXException;
 
-import rank.WordRankingParsingException;
-import dictionary.DictionaryParsingException;
+import rank.WordRankingLoadException;
+import dictionary.DictionaryLoadException;
+import lemma.LemmatizeException;
 import lemma.Lemmatizer;
 
 public class LemmatizerExample {
@@ -21,6 +22,7 @@ public class LemmatizerExample {
         "tocava", "piano", "e", "falava", "francês", "."};
     String[] tags = {"v-fin", "art", "n", "art", "n", "adj", "punc", "v-fin",
         "n", "conj-c", "v-fin", "n", "punc"};
+    String[] lemmas = null;
 
     try {
       lemmatizer = new Lemmatizer();
@@ -49,16 +51,22 @@ public class LemmatizerExample {
       // TODO Auto-generated catch block
       e.printStackTrace();
     }
-    catch (DictionaryParsingException e) {
+    catch (WordRankingLoadException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
     }
-    catch (WordRankingParsingException e) {
+    catch (DictionaryLoadException e) {
       // TODO Auto-generated catch block
       e.printStackTrace();
     }
 
-    String[] lemmas = lemmatizer.lemmatize(tokens, tags);
+    try {
+      lemmas = lemmatizer.lemmatize(tokens, tags);
+    }
+    catch (LemmatizeException e) {
+      // TODO Auto-generated catch block
+      e.printStackTrace();
+    }
 
     StringBuffer buffer = new StringBuffer();
 

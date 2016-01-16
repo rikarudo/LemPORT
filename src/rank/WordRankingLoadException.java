@@ -1,0 +1,28 @@
+package rank;
+
+/**
+ * This class ...
+ *
+ * @author   Ricardo Rodrigues
+ * @version  0.9.4
+ */
+public class WordRankingLoadException extends Exception{
+  private static final long serialVersionUID = 1L;
+
+  /**
+   * Creates a new ...
+   * 
+   */
+  public WordRankingLoadException() {
+    super();
+  }
+
+  /**
+   * Creates a new ...
+   * 
+   * @param  message ...
+   */
+  public WordRankingLoadException(String message) {
+    super(message);
+  }
+}

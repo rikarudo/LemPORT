@@ -20,16 +20,16 @@ import normalization.VerbNormalizer;
 import org.xml.sax.SAXException;
 
 import dictionary.Dictionary;
-import dictionary.DictionaryParsingException;
+import dictionary.DictionaryLoadException;
 import rank.WordRanking;
-import rank.WordRankingParsingException;
+import rank.WordRankingLoadException;
 import replacement.Replacement;
 
 /**
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.1
+ * @version  0.9.4
  */
 public class Lemmatizer {
   private static final String DEFAULT_PROP = "resources/properties/lemport.xml";
@@ -62,7 +62,7 @@ public class Lemmatizer {
   /**
    * This field...
    */
-  public static final int GENDER_NOUNS = 32;       // Binary 000100000
+  public static final int GENDER_NOUNS = 32;        // Binary 000100000
 
   /**
    * This field...
@@ -112,18 +112,18 @@ public class Lemmatizer {
   /**
    * Creates a new <code>Lemmatizer</code> object ...
    * 
-   * @throws NumberFormatException
-   * @throws InvalidPropertiesFormatException
-   * @throws IOException
-   * @throws ParserConfigurationException
-   * @throws SAXException
-   * @throws DictionaryParsingException
-   * @throws WordRankingParsingException
+   * @throws NumberFormatException ...
+   * @throws InvalidPropertiesFormatException ...
+   * @throws IOException ...
+   * @throws ParserConfigurationException ...
+   * @throws SAXException ...
+   * @throws DictionaryLoadException ...
+   * @throws WordRankingLoadException ...
    */
   public Lemmatizer()
       throws NumberFormatException, InvalidPropertiesFormatException,
       IOException, ParserConfigurationException, SAXException,
-      DictionaryParsingException, WordRankingParsingException {
+      DictionaryLoadException, WordRankingLoadException {
     this(Short.MAX_VALUE);
   }
 
@@ -131,18 +131,18 @@ public class Lemmatizer {
    * Creates a new <code>Lemmatizer</code> object ...
    * 
    * @param  cacheSize ...
-   * @throws NumberFormatException
-   * @throws InvalidPropertiesFormatException
-   * @throws IOException
-   * @throws ParserConfigurationException
-   * @throws SAXException
-   * @throws DictionaryParsingException
-   * @throws WordRankingParsingException
+   * @throws NumberFormatException ...
+   * @throws InvalidPropertiesFormatException ...
+   * @throws IOException ...
+   * @throws ParserConfigurationException ...
+   * @throws SAXException ...
+   * @throws DictionaryLoadException ...
+   * @throws WordRankingLoadException ...
    */
   public Lemmatizer(int cacheSize)
       throws NumberFormatException, InvalidPropertiesFormatException,
       IOException, ParserConfigurationException, SAXException,
-      DictionaryParsingException, WordRankingParsingException {
+      DictionaryLoadException, WordRankingLoadException {
     this(cacheSize, true, true);
   }
 
@@ -153,20 +153,20 @@ public class Lemmatizer {
    * @param  cacheSize ...
    * @param  breakOnHyphen ...
    * @param  breakOnUnderscore ...
-   * @throws InvalidPropertiesFormatException
-   * @throws IOException
-   * @throws ParserConfigurationException
-   * @throws SAXException
-   * @throws DictionaryParsingException
-   * @throws NumberFormatException
-   * @throws WordRankingParsingException
+   * @throws InvalidPropertiesFormatException ...
+   * @throws IOException ...
+   * @throws ParserConfigurationException ...
+   * @throws SAXException ...
+   * @throws DictionaryLoadException ...
+   * @throws NumberFormatException ...
+   * @throws WordRankingLoadException ...
    */
   public Lemmatizer(int cacheSize, boolean breakOnHyphen,
       boolean breakOnUnderscore)
           throws InvalidPropertiesFormatException, IOException,
           ParserConfigurationException, SAXException,
-          DictionaryParsingException, NumberFormatException,
-          WordRankingParsingException {
+          DictionaryLoadException, NumberFormatException,
+          WordRankingLoadException {
     Properties properties = new Properties();
     properties.loadFromXML(
         this.getClass().getClassLoader().getResourceAsStream(DEFAULT_PROP));
@@ -247,12 +247,12 @@ public class Lemmatizer {
    * @param  wordRankingInput ...
    * @param  dictionaryExclusions ...
    * @param  lexiconConversions ...
-   * @throws NumberFormatException
-   * @throws ParserConfigurationException
-   * @throws SAXException
-   * @throws IOException
-   * @throws DictionaryParsingException
-   * @throws WordRankingParsingException
+   * @throws NumberFormatException ...
+   * @throws ParserConfigurationException ...
+   * @throws SAXException ...
+   * @throws IOException ...
+   * @throws DictionaryLoadException ...
+   * @throws WordRankingLoadException ...
    */
   public Lemmatizer(InputStream adverbDeclensionInput,
       InputStream augmentativeDeclensionInput,
@@ -269,8 +269,8 @@ public class Lemmatizer {
       InputStream wordRankingInput,
       String dictionaryExclusions, HashMap<String, String> lexiconConversions)
           throws NumberFormatException, ParserConfigurationException,
-          SAXException, IOException, DictionaryParsingException,
-          WordRankingParsingException {
+          SAXException, IOException, DictionaryLoadException,
+          WordRankingLoadException {
     this(adverbDeclensionInput, augmentativeDeclensionInput,
         diminutiveDeclensionInput, genderDeclensionInput, genderNounInput,
         numberDeclensionInput, superlativeDeclensionInput,
@@ -299,12 +299,12 @@ public class Lemmatizer {
    * @param  dictionaryExclusions ...
    * @param  lexiconConversions ...
    * @param  cacheSize ...
-   * @throws NumberFormatException
-   * @throws ParserConfigurationException
-   * @throws SAXException
-   * @throws IOException
-   * @throws DictionaryParsingException
-   * @throws WordRankingParsingException
+   * @throws NumberFormatException ...
+   * @throws ParserConfigurationException ...
+   * @throws SAXException ...
+   * @throws IOException ...
+   * @throws DictionaryLoadException ...
+   * @throws WordRankingLoadException ...
    */
   public Lemmatizer(InputStream adverbDeclensionInput,
       InputStream augmentativeDeclensionInput,
@@ -322,8 +322,8 @@ public class Lemmatizer {
       String dictionaryExclusions, HashMap<String, String> lexiconConversions,
       int cacheSize)
           throws NumberFormatException, ParserConfigurationException,
-          SAXException, IOException, DictionaryParsingException,
-          WordRankingParsingException {
+          SAXException, IOException, DictionaryLoadException,
+          WordRankingLoadException {
     this(adverbDeclensionInput, augmentativeDeclensionInput,
         diminutiveDeclensionInput, genderDeclensionInput, genderNounInput,
         numberDeclensionInput, superlativeDeclensionInput,
@@ -354,12 +354,12 @@ public class Lemmatizer {
    * @param  cacheSize ...
    * @param  breakOnHyphen ...
    * @param  breakOnUnderscore ...
-   * @throws ParserConfigurationException
-   * @throws SAXException
-   * @throws IOException
-   * @throws DictionaryParsingException
-   * @throws NumberFormatException
-   * @throws WordRankingParsingException
+   * @throws ParserConfigurationException ...
+   * @throws SAXException ...
+   * @throws IOException ...
+   * @throws DictionaryLoadException ...
+   * @throws NumberFormatException ...
+   * @throws WordRankingLoadException ...
    */
   public Lemmatizer(InputStream adverbDeclensionInput,
       InputStream augmentativeDeclensionInput,
@@ -377,8 +377,8 @@ public class Lemmatizer {
       String dictionaryExclusions, HashMap<String, String> lexiconConversions,
       int cacheSize, boolean breakOnHyphen, boolean breakOnUnderscore)
           throws ParserConfigurationException, SAXException, IOException,
-          DictionaryParsingException, NumberFormatException,
-          WordRankingParsingException {
+          DictionaryLoadException, NumberFormatException,
+          WordRankingLoadException {
     this.initialize(adverbDeclensionInput, augmentativeDeclensionInput,
         diminutiveDeclensionInput, genderDeclensionInput, genderNounInput,
         numberDeclensionInput, superlativeDeclensionInput,
@@ -404,8 +404,8 @@ public class Lemmatizer {
       String dictionaryExclusions, HashMap<String, String> lexiconConversions,
       int cacheSize, boolean breakOnHyphen, boolean breakOnUnderscore)
           throws ParserConfigurationException, SAXException, IOException,
-          DictionaryParsingException, NumberFormatException,
-          WordRankingParsingException {
+          DictionaryLoadException, NumberFormatException,
+          WordRankingLoadException {
     Replacement[] augmentativeDeclensions = Replacement.readReplacements
         (augmentativeDeclensionInput);
     Replacement[] superlativeDeclensions = Replacement.readReplacements(
@@ -608,13 +608,11 @@ public class Lemmatizer {
    * @param  tokens ...
    * @param  tags ...
    * @return ...
+   * @throws LemmatizeException ...
    */
-  public String[] lemmatize(String tokens[], String tags[]) {
-    String[] lemmas = new String[tokens.length];
-    for (int i = 0; i < tokens.length; i++) {
-      lemmas[i] = this.lemmatize(tokens[i], tags[i]);
-    }
-    return lemmas;
+  public String[] lemmatize(String tokens[], String tags[])
+      throws LemmatizeException {
+    return this.lemmatize(tokens, tags, ALL);
   }
 
   /**
@@ -624,8 +622,15 @@ public class Lemmatizer {
    * @param  tags ...
    * @param  flags ...
    * @return ...
+   * @throws LemmatizeException ...
    */
-  public String[] lemmatize(String tokens[], String tags[], int flags) {
+  public String[] lemmatize(String tokens[], String tags[], int flags)
+      throws LemmatizeException {
+    if (tokens.length != tags.length) {
+      throw new LemmatizeException("tokens.length: " + tokens.length
+          + "; tags.length: " + tags.length);
+    }
+
     String[] lemmas = new String[tokens.length];
     for (int i = 0; i < tokens.length; i++) {
       lemmas[i] = this.lemmatize(tokens[i], tags[i], flags);

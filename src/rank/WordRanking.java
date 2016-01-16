@@ -12,7 +12,7 @@ import java.util.HashMap;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.1
+ * @version  0.9.4
  */
 public class WordRanking {
   private HashMap<String, WordListEntry> wordMap = null;
@@ -29,12 +29,12 @@ public class WordRanking {
    * Creates a new ...
    * 
    * @param  dictionaryStream ...
-   * @throws NumberFormatException
-   * @throws IOException
-   * @throws WordRankingParsingException
+   * @throws NumberFormatException ...
+   * @throws IOException ...
+   * @throws WordRankingLoadException ...
    */
   public WordRanking(InputStream dictionaryStream)
-      throws NumberFormatException, IOException, WordRankingParsingException {
+      throws NumberFormatException, IOException, WordRankingLoadException {
     this();
     this.load(dictionaryStream);
   }
@@ -43,12 +43,12 @@ public class WordRanking {
    * This method ...
    * 
    * @param  dictionaryStream ...
-   * @throws NumberFormatException
-   * @throws IOException
-   * @throws WordRankingParsingException
+   * @throws NumberFormatException ...
+   * @throws IOException ...
+   * @throws WordRankingLoadException ...
    */
   public void load(InputStream dictionaryStream)
-      throws NumberFormatException, IOException, WordRankingParsingException {
+      throws NumberFormatException, IOException, WordRankingLoadException {
     BufferedReader reader = new BufferedReader(
         new InputStreamReader(dictionaryStream));
     int rank = 0;
@@ -67,7 +67,7 @@ public class WordRanking {
         }
         else {
           reader.close();
-          throw new WordRankingParsingException(lineNumber + ": " + line);
+          throw new WordRankingLoadException(lineNumber + ": " + line);
         }
       }
     }
@@ -107,7 +107,7 @@ public class WordRanking {
   /**
    * This method ...
    * 
-   * @param  words
+   * @param  words ...
    * @return ...
    */
   public String[] rank(String[] words) {

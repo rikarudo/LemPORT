@@ -4,7 +4,7 @@ package dictionary;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.1
+ * @version  0.9.4
  */
 public class DictionaryEntry {
   private String inflectedForm = null;

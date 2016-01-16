@@ -9,21 +9,21 @@ import replacement.Replacement;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.1
+ * @version  0.9.4
  */
 public class GenderNormalizer extends Normalizer {
   /**
-   * This field...
+   * This field ...
    */
   public static final int DECLENSIONS = 1;  // Binary 01
 
   /**
-   * This field...
+   * This field ...
    */
   public static final int NOUNS = 2;        // Binary 10
 
   /**
-   * This field...
+   * This field ...
    */
   public static final int ALL = 3;          // Binary 11
 

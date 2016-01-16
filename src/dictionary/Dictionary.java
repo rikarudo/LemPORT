@@ -14,7 +14,7 @@ import lexicon.Lexicon;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.1
+ * @version  0.9.4
  */
 public class Dictionary {
   private HashMap<String, HashSet<DictionaryEntry>> dictionary = null;
@@ -31,11 +31,11 @@ public class Dictionary {
    * Creates a new ...
    * 
    * @param  dictionaryStream ...
-   * @throws IOException
-   * @throws DictionaryParsingException
+   * @throws IOException ...
+   * @throws DictionaryLoadException ...
    */
   public Dictionary(InputStream dictionaryStream)
-      throws IOException, DictionaryParsingException {
+      throws IOException, DictionaryLoadException {
     this();
     this.load(dictionaryStream);
   }
@@ -44,11 +44,11 @@ public class Dictionary {
    * This method ...
    * 
    * @param  dictionaryStream ...
-   * @throws IOException
-   * @throws DictionaryParsingException
+   * @throws IOException ...
+   * @throws DictionaryLoadException ...
    */
   public void load(InputStream dictionaryStream)
-      throws IOException, DictionaryParsingException {
+      throws IOException, DictionaryLoadException {
     BufferedReader reader = new BufferedReader(new InputStreamReader(
         dictionaryStream));
     String inflectedForm = null;
@@ -101,7 +101,7 @@ public class Dictionary {
         }
         else {
           reader.close();
-          throw new DictionaryParsingException(lineNumber + ": " + line);
+          throw new DictionaryLoadException(lineNumber + ": " + line);
         }
       }
     }

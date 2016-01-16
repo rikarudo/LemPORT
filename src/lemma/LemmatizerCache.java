@@ -7,7 +7,7 @@ import java.util.Map;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.1
+ * @version  0.9.4
  */
 public class LemmatizerCache extends LinkedHashMap<LemmatizerCacheKey, String> {
   private static final long serialVersionUID = 1l;

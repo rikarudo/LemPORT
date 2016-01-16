@@ -1,0 +1,28 @@
+package lemma;
+
+/**
+ * This class ...
+ *
+ * @author   Ricardo Rodrigues
+ * @version  0.9.4
+ */
+public class LemmatizeException extends Exception{
+  private static final long serialVersionUID = 1L;
+
+  /**
+   * Creates a new ...
+   * 
+   */
+  public LemmatizeException() {
+    super();
+  }
+
+  /**
+   * Creates a new ...
+   * 
+   * @param  message ...
+   */
+  public LemmatizeException(String message) {
+    super(message);
+  }
+}
