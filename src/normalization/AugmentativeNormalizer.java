@@ -9,7 +9,7 @@ import replacement.Replacement;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.4
+ * @version  0.9.7
  */
 public class AugmentativeNormalizer extends Normalizer {
   private Pattern[] declensionExceptions = null;

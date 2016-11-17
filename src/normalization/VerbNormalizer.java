@@ -9,7 +9,7 @@ import replacement.Replacement;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.4
+ * @version  0.9.7
  */
 public class VerbNormalizer extends Normalizer {
   private Pattern[] conjugationTargetsWithoutPrefixes = null;

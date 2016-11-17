@@ -19,7 +19,7 @@ import org.xml.sax.SAXException;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.4
+ * @version  0.9.7
  */
 public class Replacement implements Comparable<Replacement> {
 

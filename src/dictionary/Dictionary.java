@@ -14,7 +14,7 @@ import lexicon.Lexicon;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.4
+ * @version  0.9.7
  */
 public class Dictionary {
   private HashMap<String, HashSet<DictionaryEntry>> dictionary = null;

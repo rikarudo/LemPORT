@@ -12,6 +12,7 @@ import lexicon.Lexicon;
 import normalization.AdverbNormalizer;
 import normalization.AugmentativeNormalizer;
 import normalization.DiminutiveNormalizer;
+import normalization.GenderNameNormalizer;
 import normalization.GenderNormalizer;
 import normalization.NumberNormalizer;
 import normalization.SuperlativeNormalizer;
@@ -29,64 +30,61 @@ import replacement.Replacement;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.4
+ * @version  0.9.7
  */
 public class Lemmatizer {
-  private static final String DEFAULT_PROP = "resources/properties/lemport.xml";
+  private static final String DEFAULT_PROP =
+      "resources/config/lemport.properties";
 
   /**
    * This field...
    */
-  public static final int AUGMENTATIVE = 1;         // Binary 000000001
+  public static final int AUGMENTATIVE = 1;         // Binary 00000001
 
   /**
    * This field...
    */
-  public static final int SUPERLATIVE = 2;          // Binary 000000010
+  public static final int SUPERLATIVE = 2;          // Binary 00000010
 
   /**
    * This field...
    */
-  public static final int DIMINUTIVE = 4;           // Binary 000000100
+  public static final int DIMINUTIVE = 4;           // Binary 00000100
 
   /**
    * This field...
    */
-  public static final int GENDER_ALL = 8;           // Binary 000001000
+  public static final int GENDER_DECLENSIONS = 8;   // Binary 00001000
 
   /**
    * This field...
    */
-  public static final int GENDER_DECLENSIONS = 16;  // Binary 000010000
+  public static final int GENDER_NAMES = 16;        // Binary 00010000
 
   /**
    * This field...
    */
-  public static final int GENDER_NOUNS = 32;        // Binary 000100000
+  public static final int NUMBER = 32;              // Binary 00100000
 
   /**
    * This field...
    */
-  public static final int NUMBER = 64;              // Binary 001000000
+  public static final int ADVERB = 64;              // Binary 01000000
 
   /**
    * This field...
    */
-  public static final int ADVERB = 128;             // Binary 010000000
+  public static final int VERB = 128;               // Binary 10000000
 
   /**
    * This field...
    */
-  public static final int VERB = 256;               // Binary 100000000
-
-  /**
-   * This field...
-   */
-  public static final int ALL = 511;                // Binary 111111111
+  public static final int ALL = 255;                // Binary 11111111
 
   private AugmentativeNormalizer augmentativeNormalizer = null;
   private SuperlativeNormalizer superlativeNormalizer = null;
   private DiminutiveNormalizer diminutiveNormalizer = null;
+  private GenderNameNormalizer genderNameNormalizer = null;
   private GenderNormalizer genderNormalizer = null;
   private NumberNormalizer numberNormalizer = null;
   private AdverbNormalizer adverbNormalizer = null;
@@ -124,12 +122,32 @@ public class Lemmatizer {
       throws NumberFormatException, InvalidPropertiesFormatException,
       IOException, ParserConfigurationException, SAXException,
       DictionaryLoadException, WordRankingLoadException {
-    this(Short.MAX_VALUE);
+    this(ALL, Short.MAX_VALUE);
   }
 
   /**
    * Creates a new <code>Lemmatizer</code> object ...
    * 
+   * @param  flags ...
+   * @throws NumberFormatException ...
+   * @throws InvalidPropertiesFormatException ...
+   * @throws IOException ...
+   * @throws ParserConfigurationException ...
+   * @throws SAXException ...
+   * @throws DictionaryLoadException ...
+   * @throws WordRankingLoadException ...
+   */
+  public Lemmatizer(int flags)
+      throws NumberFormatException, InvalidPropertiesFormatException,
+      IOException, ParserConfigurationException, SAXException,
+      DictionaryLoadException, WordRankingLoadException {
+    this(flags, Short.MAX_VALUE);
+  }
+
+  /**
+   * Creates a new <code>Lemmatizer</code> object ...
+   * 
+   * @param  flags ...
    * @param  cacheSize ...
    * @throws NumberFormatException ...
    * @throws InvalidPropertiesFormatException ...
@@ -139,17 +157,18 @@ public class Lemmatizer {
    * @throws DictionaryLoadException ...
    * @throws WordRankingLoadException ...
    */
-  public Lemmatizer(int cacheSize)
+  public Lemmatizer(int flags, int cacheSize)
       throws NumberFormatException, InvalidPropertiesFormatException,
       IOException, ParserConfigurationException, SAXException,
       DictionaryLoadException, WordRankingLoadException {
-    this(cacheSize, true, true);
+    this(flags, cacheSize, true, true);
   }
 
 
   /**
    * Creates a new <code>Lemmatizer</code> object ...
    * 
+   * @param  flags ...
    * @param  cacheSize ...
    * @param  breakOnHyphen ...
    * @param  breakOnUnderscore ...
@@ -161,14 +180,14 @@ public class Lemmatizer {
    * @throws NumberFormatException ...
    * @throws WordRankingLoadException ...
    */
-  public Lemmatizer(int cacheSize, boolean breakOnHyphen,
+  public Lemmatizer(int flags, int cacheSize, boolean breakOnHyphen,
       boolean breakOnUnderscore)
           throws InvalidPropertiesFormatException, IOException,
           ParserConfigurationException, SAXException,
           DictionaryLoadException, NumberFormatException,
           WordRankingLoadException {
     Properties properties = new Properties();
-    properties.loadFromXML(
+    properties.load(
         this.getClass().getClassLoader().getResourceAsStream(DEFAULT_PROP));
     InputStream adverbDeclensionInput =
         this.getClass().getClassLoader().getResourceAsStream(
@@ -182,9 +201,9 @@ public class Lemmatizer {
     InputStream genderDeclensionInput =
         this.getClass().getClassLoader().getResourceAsStream(
             properties.getProperty("genderDeclensions"));
-    InputStream genderNounInput =
+    InputStream genderNameInput =
         this.getClass().getClassLoader().getResourceAsStream(
-            properties.getProperty("genderNouns"));
+            properties.getProperty("genderNames"));
     InputStream numberDeclensionInput =
         this.getClass().getClassLoader().getResourceAsStream(
             properties.getProperty("numberDeclensions"));
@@ -212,7 +231,8 @@ public class Lemmatizer {
     String dictionaryExclusions =
         properties.getProperty("dictionaryExclusions");
     HashMap<String, String> lexiconConversions = new HashMap<String, String>();
-    String[] conversions = properties.getProperty("lexConversions").split(";");
+    String[] conversions = properties.getProperty(
+        "lexicalConversions").split(";");
     for (String conversion : conversions) {
       if (conversion.contains(":") && (conversion.indexOf(":") > 0)
           && (conversion.indexOf(":") < conversion.length() - 1)) {
@@ -221,12 +241,12 @@ public class Lemmatizer {
       }
     }
     this.initialize(adverbDeclensionInput, augmentativeDeclensionInput,
-        diminutiveDeclensionInput, genderDeclensionInput, genderNounInput,
+        diminutiveDeclensionInput, genderDeclensionInput, genderNameInput,
         numberDeclensionInput, superlativeDeclensionInput,
         irregularVerbConjugationInput, regularVerbLexemeInput,
         regularVerbDeclensionInput, dictionaryInput, customDictionaryInput,
-        wordRankingInput, dictionaryExclusions, lexiconConversions, cacheSize,
-        breakOnHyphen, breakOnUnderscore);
+        wordRankingInput, dictionaryExclusions, lexiconConversions, flags,
+        cacheSize, breakOnHyphen, breakOnUnderscore);
   }
 
   /**
@@ -236,7 +256,7 @@ public class Lemmatizer {
    * @param  augmentativeDeclensionInput ...
    * @param  diminutiveDeclensionInput ...
    * @param  genderDeclensionInput ...
-   * @param  genderNounInput ...
+   * @param  genderNameInput ...
    * @param  numberDeclensionInput ...
    * @param  superlativeDeclensionInput ...
    * @param  irregularVerbConjugationInput ...
@@ -258,7 +278,7 @@ public class Lemmatizer {
       InputStream augmentativeDeclensionInput,
       InputStream diminutiveDeclensionInput,
       InputStream genderDeclensionInput,
-      InputStream genderNounInput,
+      InputStream genderNameInput,
       InputStream numberDeclensionInput,
       InputStream superlativeDeclensionInput,
       InputStream irregularVerbConjugationInput,
@@ -272,11 +292,11 @@ public class Lemmatizer {
           SAXException, IOException, DictionaryLoadException,
           WordRankingLoadException {
     this(adverbDeclensionInput, augmentativeDeclensionInput,
-        diminutiveDeclensionInput, genderDeclensionInput, genderNounInput,
+        diminutiveDeclensionInput, genderDeclensionInput, genderNameInput,
         numberDeclensionInput, superlativeDeclensionInput,
         irregularVerbConjugationInput, regularVerbLexemeInput,
         regularVerbDeclensionInput, dictionaryInput, customDictionaryInput,
-        wordRankingInput, dictionaryExclusions, lexiconConversions,
+        wordRankingInput, dictionaryExclusions, lexiconConversions, ALL,
         Short.MAX_VALUE);
   }
 
@@ -287,7 +307,7 @@ public class Lemmatizer {
    * @param  augmentativeDeclensionInput ...
    * @param  diminutiveDeclensionInput ...
    * @param  genderDeclensionInput ...
-   * @param  genderNounInput ...
+   * @param  genderNameInput ...
    * @param  numberDeclensionInput ...
    * @param  superlativeDeclensionInput ...
    * @param  irregularVerbConjugationInput ...
@@ -298,6 +318,7 @@ public class Lemmatizer {
    * @param  wordRankingInput ...
    * @param  dictionaryExclusions ...
    * @param  lexiconConversions ...
+   * @param  flags ...
    * @param  cacheSize ...
    * @throws NumberFormatException ...
    * @throws ParserConfigurationException ...
@@ -310,7 +331,7 @@ public class Lemmatizer {
       InputStream augmentativeDeclensionInput,
       InputStream diminutiveDeclensionInput,
       InputStream genderDeclensionInput,
-      InputStream genderNounInput,
+      InputStream genderNameInput,
       InputStream numberDeclensionInput,
       InputStream superlativeDeclensionInput,
       InputStream irregularVerbConjugationInput,
@@ -320,16 +341,16 @@ public class Lemmatizer {
       InputStream customDictionaryInput,
       InputStream wordRankingInput,
       String dictionaryExclusions, HashMap<String, String> lexiconConversions,
-      int cacheSize)
+      int flags, int cacheSize)
           throws NumberFormatException, ParserConfigurationException,
           SAXException, IOException, DictionaryLoadException,
           WordRankingLoadException {
     this(adverbDeclensionInput, augmentativeDeclensionInput,
-        diminutiveDeclensionInput, genderDeclensionInput, genderNounInput,
+        diminutiveDeclensionInput, genderDeclensionInput, genderNameInput,
         numberDeclensionInput, superlativeDeclensionInput,
         irregularVerbConjugationInput, regularVerbLexemeInput,
         regularVerbDeclensionInput, dictionaryInput, customDictionaryInput,
-        wordRankingInput, dictionaryExclusions, lexiconConversions,
+        wordRankingInput, dictionaryExclusions, lexiconConversions, flags,
         Short.MAX_VALUE, true, true);
   }
 
@@ -340,7 +361,7 @@ public class Lemmatizer {
    * @param  augmentativeDeclensionInput ...
    * @param  diminutiveDeclensionInput ...
    * @param  genderDeclensionInput ...
-   * @param  genderNounInput ...
+   * @param  genderNameInput ...
    * @param  numberDeclensionInput ...
    * @param  superlativeDeclensionInput ...
    * @param  irregularVerbConjugationInput ...
@@ -351,6 +372,7 @@ public class Lemmatizer {
    * @param  wordRankingInput ...
    * @param  dictionaryExclusions ...
    * @param  lexiconConversions ...
+   * @param  flags ...
    * @param  cacheSize ...
    * @param  breakOnHyphen ...
    * @param  breakOnUnderscore ...
@@ -365,7 +387,7 @@ public class Lemmatizer {
       InputStream augmentativeDeclensionInput,
       InputStream diminutiveDeclensionInput,
       InputStream genderDeclensionInput,
-      InputStream genderNounInput,
+      InputStream genderNameInput,
       InputStream numberDeclensionInput,
       InputStream superlativeDeclensionInput,
       InputStream irregularVerbConjugationInput,
@@ -375,24 +397,25 @@ public class Lemmatizer {
       InputStream customDictionaryInput,
       InputStream wordRankingInput,
       String dictionaryExclusions, HashMap<String, String> lexiconConversions,
-      int cacheSize, boolean breakOnHyphen, boolean breakOnUnderscore)
+      int flags, int cacheSize, boolean breakOnHyphen,
+      boolean breakOnUnderscore)
           throws ParserConfigurationException, SAXException, IOException,
           DictionaryLoadException, NumberFormatException,
           WordRankingLoadException {
     this.initialize(adverbDeclensionInput, augmentativeDeclensionInput,
-        diminutiveDeclensionInput, genderDeclensionInput, genderNounInput,
+        diminutiveDeclensionInput, genderDeclensionInput, genderNameInput,
         numberDeclensionInput, superlativeDeclensionInput,
         irregularVerbConjugationInput, regularVerbLexemeInput,
         regularVerbDeclensionInput, dictionaryInput, customDictionaryInput,
-        wordRankingInput, dictionaryExclusions, lexiconConversions, cacheSize,
-        breakOnHyphen, breakOnUnderscore);
+        wordRankingInput, dictionaryExclusions, lexiconConversions, flags,
+        cacheSize, breakOnHyphen, breakOnUnderscore);
   }
 
   private void initialize(InputStream adverbDeclensionInput,
       InputStream augmentativeDeclensionInput,
       InputStream diminutiveDeclensionInput,
       InputStream genderDeclensionInput,
-      InputStream genderNounInput,
+      InputStream genderNameInput,
       InputStream numberDeclensionInput,
       InputStream superlativeDeclensionInput,
       InputStream irregularVerbConjugationInput,
@@ -402,7 +425,8 @@ public class Lemmatizer {
       InputStream customDictionaryInput,
       InputStream wordRankingInput,
       String dictionaryExclusions, HashMap<String, String> lexiconConversions,
-      int cacheSize, boolean breakOnHyphen, boolean breakOnUnderscore)
+      int flags, int cacheSize, boolean breakOnHyphen,
+      boolean breakOnUnderscore)
           throws ParserConfigurationException, SAXException, IOException,
           DictionaryLoadException, NumberFormatException,
           WordRankingLoadException {
@@ -412,9 +436,10 @@ public class Lemmatizer {
         superlativeDeclensionInput);
     Replacement[] diminutiveDeclensions = Replacement.readReplacements(
         diminutiveDeclensionInput);
-    Replacement[] genderDeclensionInputs = Replacement.readReplacements(
+    Replacement[] genderDeclensions = Replacement.readReplacements(
         genderDeclensionInput);
-    Replacement[] genderNouns = Replacement.readReplacements(genderNounInput);
+    Replacement[] genderNames = Replacement.readReplacements(
+        genderNameInput);
     Replacement[] adverbDeclensions = Replacement.readReplacements(
         adverbDeclensionInput);
     Replacement[] numberDeclensions = Replacement.readReplacements(
@@ -431,8 +456,8 @@ public class Lemmatizer {
     this.superlativeNormalizer = new SuperlativeNormalizer(
         superlativeDeclensions);
     this.diminutiveNormalizer = new DiminutiveNormalizer(diminutiveDeclensions);
-    this.genderNormalizer = new GenderNormalizer(genderDeclensionInputs,
-        genderNouns);
+    this.genderNameNormalizer = new GenderNameNormalizer(genderNames);
+    this.genderNormalizer = new GenderNormalizer(genderDeclensions);
     this.adverbNormalizer = new AdverbNormalizer(adverbDeclensions);
     this.numberNormalizer = new NumberNormalizer(numberDeclensions);
     this.verbNormalizer = new VerbNormalizer(irregularVerbConjugations,
@@ -441,14 +466,15 @@ public class Lemmatizer {
     this.augmentativeTag = this.combineReplacementTags(augmentativeDeclensions);
     this.superlativeTag = this.combineReplacementTags(superlativeDeclensions);
     this.diminutiveTag = this.combineReplacementTags(diminutiveDeclensions);
-    this.genderTag = this.combineReplacementTags(genderDeclensionInputs) + "|"
-        + this.combineReplacementTags(genderNouns);
+    this.genderTag = this.combineReplacementTags(genderDeclensions) + "|"
+        + this.combineReplacementTags(genderNames);
     this.numberTag = this.combineReplacementTags(numberDeclensions);
     this.adverbTag = this.combineReplacementTags(adverbDeclensions);
     this.verbTag = this.combineReplacementTags(irregularVerbConjugations) + "|"
         + this.combineReplacementTags(regularVerbLexemes) + "|"
         + this.combineReplacementTags(regularVerbDeclensions);
 
+    this.setFlags(flags);
     this.cache = new LemmatizerCache(cacheSize);
     this.breakOnHyphen = breakOnHyphen;
     this.breakOnUnderscore = breakOnUnderscore;
@@ -470,20 +496,6 @@ public class Lemmatizer {
    * @return the lemma of the token (when classified with the given tag)
    */
   public String lemmatize(String token, String tag) {
-    return this.lemmatize(token, tag, ALL);
-  }
-
-  /**
-   * This method retrieves the lemma of a given token, when classified with
-   * a given <em>PoS tag</em>.
-   *
-   * @param  token the token whose lemma is wanted
-   * @param  tag the <em>PoS tag</em> of the token
-   * @param  flags the reductions that should be applied
-   * @return the lemma of the token (when classified with the given tag)
-   */
-  public String lemmatize(String token, String tag, int flags) {
-    this.setFlags(flags);
     // normalize token/lemma
     String lemma = token.toLowerCase();
     // check for token|tag in cache
@@ -515,14 +527,12 @@ public class Lemmatizer {
     }
     // check for composed tokens
     if (breakOnHyphen && lemma.contains("-")) {
-      return this.lemmatize(lemma.substring(0, lemma.indexOf("-")), tag, flags)
-          + "-" + this.lemmatize(lemma.substring(lemma.indexOf("-") + 1), tag,
-              flags);
+      return this.lemmatize(lemma.substring(0, lemma.indexOf("-")), tag)
+          + "-" + this.lemmatize(lemma.substring(lemma.indexOf("-") + 1), tag);
     }
     if (breakOnUnderscore && lemma.contains("_")) {
-      return this.lemmatize(lemma.substring(0, lemma.indexOf("_")), tag, flags)
-          + "_" + this.lemmatize(lemma.substring(lemma.indexOf("_") + 1), tag,
-              flags);
+      return this.lemmatize(lemma.substring(0, lemma.indexOf("_")), tag)
+          + "_" + this.lemmatize(lemma.substring(lemma.indexOf("_") + 1), tag);
     }
     // use rules
     if (this.checkFlag(ADVERB)
@@ -565,7 +575,7 @@ public class Lemmatizer {
         return lemma;          
       }
     }
-    if (this.checkFlag(GENDER_ALL)
+    else if (this.checkFlag(GENDER_DECLENSIONS)
         && tag.toLowerCase().matches(genderTag)) {
       lemma = genderNormalizer.normalize(lemma, tag);
       if (lexicon.contains(lemma, lexPOSTag)) {
@@ -573,19 +583,9 @@ public class Lemmatizer {
         return lemma;          
       }
     }
-    else if (this.checkFlag(GENDER_DECLENSIONS)
+    else if (this.checkFlag(GENDER_NAMES)
         && tag.toLowerCase().matches(genderTag)) {
-      lemma = genderNormalizer.normalize(lemma, tag,
-          GenderNormalizer.DECLENSIONS);
-      if (lexicon.contains(lemma, lexPOSTag)) {
-        cache.put(key, lemma);
-        return lemma;          
-      }
-    }
-    else if (this.checkFlag(GENDER_NOUNS)
-        && tag.toLowerCase().matches(genderTag)) {
-      lemma = genderNormalizer.normalize(lemma, tag,
-          GenderNormalizer.NOUNS);
+      lemma = genderNameNormalizer.normalize(lemma, tag);
       if (lexicon.contains(lemma, lexPOSTag)) {
         cache.put(key, lemma);
         return lemma;          
@@ -612,20 +612,6 @@ public class Lemmatizer {
    */
   public String[] lemmatize(String tokens[], String tags[])
       throws LemmatizeException {
-    return this.lemmatize(tokens, tags, ALL);
-  }
-
-  /**
-   * This method ...
-   *
-   * @param  tokens ...
-   * @param  tags ...
-   * @param  flags ...
-   * @return ...
-   * @throws LemmatizeException ...
-   */
-  public String[] lemmatize(String tokens[], String tags[], int flags)
-      throws LemmatizeException {
     if (tokens.length != tags.length) {
       throw new LemmatizeException("tokens.length: " + tokens.length
           + "; tags.length: " + tags.length);
@@ -633,7 +619,7 @@ public class Lemmatizer {
 
     String[] lemmas = new String[tokens.length];
     for (int i = 0; i < tokens.length; i++) {
-      lemmas[i] = this.lemmatize(tokens[i], tags[i], flags);
+      lemmas[i] = this.lemmatize(tokens[i], tags[i]);
     }
     return lemmas;
   }
@@ -672,13 +658,40 @@ public class Lemmatizer {
     return combinedTags;
   }
 
-  private void setFlags(int flags) {
+  /**
+   * This method ...
+   * 
+   * @param  flags ...
+   */
+  public void setFlags(int flags) {
     // bitmasks
     this.flags = this.flags | flags;
   }
 
-  private boolean checkFlag(int flag) {
+  /**
+   * This method ...
+   * 
+   * @param  flag ...
+   * @return ...
+   */
+  public boolean checkFlag(int flag) {
     // bitmasks
     return (flags & flag) == flag;
+  }
+
+  /**
+   * This method ...
+   */
+  public void clearFlags() {
+    this.flags = 0;
+  }
+
+  /**
+   * This method ...
+   * 
+   * @return ...
+   */
+  public int getFlags() {
+    return this.flags;
   }
 }

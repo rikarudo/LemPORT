@@ -4,7 +4,7 @@ package normalization;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.4
+ * @version  0.9.7
  */
 public abstract class Normalizer {
 
