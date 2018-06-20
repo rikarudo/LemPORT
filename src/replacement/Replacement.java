@@ -19,10 +19,9 @@ import org.xml.sax.SAXException;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.7
+ * @version  0.9.9
  */
 public class Replacement implements Comparable<Replacement> {
-
   private String target = null;
   private String tag = null;
   private String prefix = null;
@@ -263,11 +262,11 @@ public class Replacement implements Comparable<Replacement> {
    *         between the attributes of both <em>replacements</em>
    */
   public int compareTo(Replacement other) {
-    // it must be used the "normalized" length of the targets to circumvent
+    // it must be used a "normalized" length of the targets to circumvent
     // situations where the use of regular expressions on them may alter the
     // intended order of both targets
     // as such, for now, all contents between squared brackets are reduced
-    // to one in length, affecting thus the overall length of the targets
+    // to one unit in length, affecting thus the overall length of the targets
     int totalLength = this.computeNormalizedTargetLength(target) * 1000
         + exceptions.length() + replacement.length() + prefix.length()
         + tag.length() + suffix.length();

@@ -1,0 +1,1 @@
+packageSearchIndex = [{"l":"dictionary"},{"l":"examples"},{"l":"lemma"},{"l":"lexicon"},{"l":"normalization"},{"l":"rank"},{"l":"replacement"}]

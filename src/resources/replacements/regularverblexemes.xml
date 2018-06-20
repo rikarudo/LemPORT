@@ -594,6 +594,7 @@
   <replacement target="avassal[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">avassalar</replacement>
   <replacement target="avent[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">aventar</replacement>
   <replacement target="avelud[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">aveludar</replacement>
+  <replacement target="aven[cç][aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">avençar</replacement>
   <replacement target="aventur[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">aventurar</replacement>
   <replacement target="averb[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">averbar</replacement>
   <replacement target="averigu[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">averiguar</replacement>
@@ -4133,6 +4134,7 @@
   <replacement target="tort[ao]s?" tag="v|v-fin|v-ger|v-pcp|v-inf">torcer</replacement>
   <replacement target="vag[ao]s?" tag="v|v-fin|v-ger|v-pcp|v-inf">vagar</replacement>
 </regularverblexemes>
+
 <!--
 a|ado|ai|ais|am|amos|ámos|ando|ar|ara|ará|aram|áramos|arão|aras|arás|ardes|arei|areis|áreis|arem|aremos|ares|aria|ariam|aríamos|arias|aríeis|armos|as|asse|ásseis|assem|ássemos|asses|aste|astes|ava|avam|ávamos|avas|áveis|e|ei|eis|em|emos|endo|er|era|erá|eram|êramos|erão|eras|erás|erdes|erei|ereis|êreis|erem|eremos|eres|eria|eriam|eríamos|erias|eríeis|ermos|es|esse|êsseis|essem|êssemos|esses|este|estes|eu|i|ia|iam|íamos|ias|ido|íeis|imos|indo|ir|ira|irá|iram|íramos|irão|iras|irás|irdes|irei|ireis|íreis|irem|iremos|ires|iria|iriam|iríamos|irias|iríeis|irmos|is|isse|ísseis|issem|íssemos|isses|iste|istes|iu|o|ou
 -->

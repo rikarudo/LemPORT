@@ -29,4 +29,8 @@
   <replacement target="quaisquer" tag="art|pron|pron-pers|pron-det|pron-indp">qualquer</replacement>
   <replacement target="s" tag="art|pron|pron-pers|pron-det|pron-indp" exceptions="ambas|ambos|demais|diversas|diversos|mais|menos|nós|s|várias|vários|vós"></replacement>
 </numberdeclensions>
-<!-- http://www.ciberduvidas.com/pergunta.php?id=14650 -->
+
+<!--
+TO ADDRESS AT A LATER STAGE:
+http://www.ciberduvidas.com/pergunta.php?id=14650
+-->

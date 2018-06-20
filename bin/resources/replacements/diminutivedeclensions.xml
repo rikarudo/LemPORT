@@ -26,3 +26,15 @@
   <replacement target="zito" tag="n|n-adj|adj" exceptions="cabazito|capuzito|rapazito|quartzito|zito"></replacement>
   <replacement target="zito" tag="n|n-adj|adj" exceptions="zito">z</replacement>
 </diminutivedeclensions>
+
+
+<!--
+TO ADDRESS AT A LATER STAGE:
+-acho: rio - riacho
+-ote: caixa – caixote
+-ejo: lugar – lugarejo
+-(z)inho – jardim – jardinzinho
+-ebre: casa – casebre
+-eta: sala -saleta
+-isco: chuva - chuvisco
+-->

@@ -13,7 +13,7 @@ import java.util.Set;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.7
+ * @version  0.9.9
  */
 public class Lexicon {
   private HashMap<String, HashSet<String>> lexicon = null;
@@ -29,36 +29,37 @@ public class Lexicon {
   /**
    * Creates a new ...
    * 
-   * @param  lexiconInput ...
+   * @param  lexiconData ...
    * @throws IOException ...
    * @throws LexiconLoadException ...
    */
-  public Lexicon(InputStream lexiconInput)
+  public Lexicon(InputStream lexiconData)
       throws IOException, LexiconLoadException {
     this();
-    this.load(lexiconInput);
+    this.load(lexiconData);
   }
 
   /**
    * This method ...
    * 
-   * @param  lexiconInput ...
+   * @param  lexiconData ...
    * @throws IOException ...
    * @throws LexiconLoadException ...
    */
-  public void load(InputStream lexiconInput)
+  public void load(InputStream lexiconData)
       throws IOException, LexiconLoadException {
     BufferedReader reader = new BufferedReader(
-        new InputStreamReader(lexiconInput));
+        new InputStreamReader(lexiconData));
     String lemma = null;
     String partOfSpeech = null;
     String line = null;
     int lineNumber = 0;
     while ((line = reader.readLine()) != null) {
       lineNumber++;
+      line = line.trim();
       lemma = new String();
       partOfSpeech = new String();
-      if (line.length() > 0 && !line.startsWith("%")) {
+      if (line.length() > 0 && !line.startsWith("#")) {
         if (line.contains(",") && line.contains(".")
             && (line.indexOf(".") > line.indexOf(",") + 1)
             && (line.indexOf(".") + 1 < line.length())

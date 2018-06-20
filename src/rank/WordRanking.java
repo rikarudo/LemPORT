@@ -12,7 +12,7 @@ import java.util.HashMap;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.7
+ * @version  0.9.9
  */
 public class WordRanking {
   private HashMap<String, WordListEntry> wordMap = null;
@@ -28,29 +28,29 @@ public class WordRanking {
   /**
    * Creates a new ...
    * 
-   * @param  dictionaryStream ...
+   * @param  dictionaryData ...
    * @throws NumberFormatException ...
    * @throws IOException ...
    * @throws WordRankingLoadException ...
    */
-  public WordRanking(InputStream dictionaryStream)
+  public WordRanking(InputStream dictionaryData)
       throws NumberFormatException, IOException, WordRankingLoadException {
     this();
-    this.load(dictionaryStream);
+    this.load(dictionaryData);
   }
 
   /**
    * This method ...
    * 
-   * @param  dictionaryStream ...
+   * @param  dictionaryData ...
    * @throws NumberFormatException ...
    * @throws IOException ...
    * @throws WordRankingLoadException ...
    */
-  public void load(InputStream dictionaryStream)
+  public void load(InputStream dictionaryData)
       throws NumberFormatException, IOException, WordRankingLoadException {
     BufferedReader reader = new BufferedReader(
-        new InputStreamReader(dictionaryStream));
+        new InputStreamReader(dictionaryData));
     int rank = 0;
     int frequency = 0;
     String word = null;
@@ -58,7 +58,8 @@ public class WordRanking {
     int lineNumber = 0;
     while ((line = reader.readLine()) != null) {
       lineNumber++;
-      if  (line.length() > 0 && !line.startsWith("%")) {
+      line = line.trim();
+      if  (line.length() > 0 && !line.startsWith("#")) {
         if (line.contains("\t") && (line.indexOf("\t") + 1 < line.length())) {
           word = line.substring(line.indexOf("\t") + 1).replace("=", " ");
           frequency = Integer.parseInt(line.substring(0, line.indexOf("\t")));

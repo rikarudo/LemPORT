@@ -14,7 +14,7 @@ import lexicon.Lexicon;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.7
+ * @version  0.9.9
  */
 public class Dictionary {
   private HashMap<String, HashSet<DictionaryEntry>> dictionary = null;
@@ -60,12 +60,13 @@ public class Dictionary {
     int lineNumber = 0;
     while ((line = reader.readLine()) != null) {
       lineNumber++;
+      line = line.trim();
       inflectedForm = new String();
       lemma = new String();
       partOfSpeech = new String();
       subcategory = new String();
       morphAttributes = new String();
-      if (line.length() > 0 && !line.startsWith("%")) {
+      if (line.length() > 0 && !line.startsWith("#")) {
         if (line.contains(",") && line.contains(".")
             && (line.indexOf(".") > line.indexOf(",") + 1)
             && (line.indexOf(".") + 1 < line.length())

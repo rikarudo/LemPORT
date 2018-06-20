@@ -9,7 +9,7 @@ import replacement.Replacement;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.7
+ * @version  0.9.9
  */
 public class VerbNormalizer extends Normalizer {
   private Pattern[] conjugationTargetsWithoutPrefixes = null;
@@ -85,7 +85,7 @@ public class VerbNormalizer extends Normalizer {
     String normalization = currentNormalization;
     boolean matchFound = false;
 
-    // from conjugations to lemmas (without prefixes)
+    // from inflections to lemmas (without prefixes)
     if (!matchFound) {
       for (int i = 0; i < conjugations.length; i++) {
         if (conjugationTargetsWithoutPrefixes[i].matcher(
@@ -105,12 +105,12 @@ public class VerbNormalizer extends Normalizer {
       }
     }
 
-    // from conjugations to lemmas (with prefixes)
+    // from inflections to lemmas (with prefixes)
     if (!matchFound) {
       for (int i = 0; i < conjugations.length; i++) {
         if (conjugationTargets[i].matcher(currentNormalization).matches()
             && conjugationTags[i].matcher(tag.toLowerCase()).matches()) {
-          // check whether the current conjugation is from a verb with a prefix
+          // check whether the current inflection is from a verb with a prefix
           // and appends it (the prefix) to the replacement
           if (currentNormalization.split(
               conjugations[i].getTarget()).length > 0) {
