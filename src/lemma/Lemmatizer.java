@@ -34,7 +34,7 @@ import replacement.Replacement;
  */
 public class Lemmatizer {
   private static final String DEFAULT_PROP =
-      "resources/config/nlpport.properties";
+      "resources/config/lemport.properties";
 
   /**
    * This field...
