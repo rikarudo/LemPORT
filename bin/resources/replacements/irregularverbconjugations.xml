@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <irregularverbconjugations>
   <!-- general data -->
-  <prefix>(a|abs|ante|ben|com|con|contra|de|des|entre|inter|o|ob|pos|pre|pro|re|satis|sobre|tres)\-?</prefix>
+  <prefix>(a|abs|ad|ante|ben|com|con|contra|de|des|entre|inter|o|ob|pos|pre|pro|re|satis|sobre|tres)\-?</prefix>
   <suffix>\-*</suffix>
-  <!-- aprazer -->
+  <!-- aprazer irregular -->
   <replacement target="apraz" tag="v|v-fin|v-ger|v-pcp|v-inf">aprazer</replacement>
   <replacement target="apraza" tag="v|v-fin|v-ger|v-pcp|v-inf">aprazer</replacement>
   <replacement target="aprazam" tag="v|v-fin|v-ger|v-pcp|v-inf">aprazer</replacement>
@@ -902,6 +902,62 @@
   <replacement target="contrapusesses" tag="v|v-fin|v-ger|v-pcp|v-inf">contrapor</replacement>
   <replacement target="contrapuseste" tag="v|v-fin|v-ger|v-pcp|v-inf">contrapor</replacement>
   <replacement target="contrapusestes" tag="v|v-fin|v-ger|v-pcp|v-inf">contrapor</replacement>
+  <!-- desprover irregular -->
+  <replacement target="desprovê" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovede" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovedes" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovêem" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproveja" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovejais" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovejam" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovejamos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovejas" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovejo" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovemos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovendo" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprover" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproverá" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproverão" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproverás" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproverdes" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproverei" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovereis" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproverem" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproveremos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproveres" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproveria" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproveriam" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproveríamos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproverias" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproveríeis" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovermos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovês" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovi" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovia" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproviam" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovíamos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovias" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovíeis" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovimos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovir" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovira" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproviram" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovíramos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproviras" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovirdes" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovíreis" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovirem" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovires" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovirmos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovisse" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovísseis" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovissem" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovíssemos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovisses" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproviste" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovistes" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desprovist[ao]s?" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
+  <replacement target="desproviu" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
   <!-- dispor irregular -->
   <replacement target="dispõe" tag="v|v-fin|v-ger|v-pcp|v-inf">dispor</replacement>
   <replacement target="dispõem" tag="v|v-fin|v-ger|v-pcp|v-inf">dispor</replacement>
@@ -2292,60 +2348,4 @@
   <replacement target="virias" tag="v|v-fin|v-ger|v-pcp|v-inf">vir</replacement>
   <replacement target="viríeis" tag="v|v-fin|v-ger|v-pcp|v-inf">vir</replacement>
   <replacement target="virmos" tag="v|v-fin|v-ger|v-pcp|v-inf">vir</replacement>
-  <!-- desprover irregular -->
-  <replacement target="desprovê" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovede" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovedes" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovêem" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproveja" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovejais" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovejam" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovejamos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovejas" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovejo" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovemos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovendo" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprover" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproverá" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproverão" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproverás" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproverdes" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproverei" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovereis" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproverem" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproveremos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproveres" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproveria" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproveriam" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproveríamos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproverias" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproveríeis" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovermos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovês" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovi" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovia" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproviam" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovíamos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovias" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovíeis" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovimos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovir" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovira" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproviram" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovíramos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproviras" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovirdes" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovíreis" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovirem" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovires" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovirmos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovisse" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovísseis" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovissem" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovíssemos" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovisses" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproviste" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovistes" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desprovist[ao]s?" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
-  <replacement target="desproviu" tag="v|v-fin|v-ger|v-pcp|v-inf">desprover</replacement>
 </irregularverbconjugations>

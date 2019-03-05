@@ -4,7 +4,7 @@ package lemma;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.9
+ * @version  0.9.9.9
  */
 public class LemmatizerCacheKey {
   private String token = null;

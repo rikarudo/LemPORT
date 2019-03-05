@@ -30,11 +30,11 @@ import replacement.Replacement;
  * This class ...
  *
  * @author   Ricardo Rodrigues
- * @version  0.9.9
+ * @version  0.9.9.9
  */
 public class Lemmatizer {
   private static final String DEFAULT_PROP =
-      "resources/config/lemport.properties";
+      "resources/config/nlpport.properties";
 
   /**
    * This field...
@@ -161,7 +161,7 @@ public class Lemmatizer {
       throws NumberFormatException, InvalidPropertiesFormatException,
       IOException, ParserConfigurationException, SAXException,
       DictionaryLoadException, WordRankingLoadException {
-    this(flags, cacheSize, true, true);
+    this(flags, cacheSize, false, true);
   }
 
 
@@ -351,7 +351,7 @@ public class Lemmatizer {
         irregularVerbConjugationInput, regularVerbLexemeInput,
         regularVerbDeclensionInput, dictionaryInput, customDictionaryInput,
         wordRankingInput, dictionaryExclusions, lexiconConversions, flags,
-        Short.MAX_VALUE, true, true);
+        Short.MAX_VALUE, false, true);
   }
 
   /**
@@ -504,26 +504,17 @@ public class Lemmatizer {
       lemma = cache.get(key);
       return lemma;       
     }
-    // check dictionary
-    String lexPOSTag = tag.toUpperCase();
-    if (lexPOSTag.contains("-")) {
-      lexPOSTag = lexPOSTag.substring(0, lexPOSTag.indexOf("-"));
+    // simplify pos tag to address label-lex-sw
+    String lexTag = tag.toUpperCase();
+    if (lexTag.contains("-")) {
+      lexTag = lexTag.substring(0, lexTag.indexOf("-"));
     }
     // address pos tag notation differences between open-nlp and label-lex-sw
     for (String conversionKey : lexiconConversions.keySet()) {
-      if (lexPOSTag.equals(conversionKey)) {
-        lexPOSTag = lexiconConversions.get(conversionKey);
+      if (lexTag.equals(conversionKey)) {
+        lexTag = lexiconConversions.get(conversionKey);
+        break;
       }
-    }
-    if (dictionary.contains(lemma, lexPOSTag)
-        && !lexPOSTag.matches(dictionaryExclusions)) {
-      String[] lemmas = dictionary.retrieveLemmas(lemma, lexPOSTag);
-      return ranking.retrieveTopWord(lemmas);
-    }
-    // check lexicon
-    if (lexicon.contains(lemma, lexPOSTag)) {
-      cache.put(key, lemma);
-      return lemma;          
     }
     // check for composed tokens
     if (breakOnHyphen && lemma.contains("-")) {
@@ -534,67 +525,163 @@ public class Lemmatizer {
       return this.lemmatize(lemma.substring(0, lemma.indexOf("_")), tag)
           + "_" + this.lemmatize(lemma.substring(lemma.indexOf("_") + 1), tag);
     }
-    // use rules
+    // check flags for determining which normalizations to perform
     if (this.checkFlag(ADVERB)
         && tag.toLowerCase().matches(adverbTag)) {
+      // check dictionary
+      if (dictionary.contains(lemma, lexTag)
+          && !lexTag.matches(dictionaryExclusions)) {
+        String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
+        return ranking.retrieveTopWord(lemmas);
+      }
+      // check lexicon
+      if (lexicon.contains(lemma, lexTag)) {
+        cache.put(key, lemma);
+        return lemma;          
+      }
+      // and then check rules
       lemma = adverbNormalizer.normalize(lemma, tag);
-      if (lexicon.contains(lemma, lexPOSTag)) {
+      if (lexicon.contains(lemma, lexTag)) {
         cache.put(key, lemma);
         return lemma;          
       }
     }
     if (this.checkFlag(NUMBER)
         && tag.toLowerCase().matches(numberTag)) {
+      // check dictionary
+      if (dictionary.contains(lemma, lexTag)
+          && !lexTag.matches(dictionaryExclusions)) {
+        String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
+        return ranking.retrieveTopWord(lemmas);
+      }
+      // check lexicon
+      if (lexicon.contains(lemma, lexTag)) {
+        cache.put(key, lemma);
+        return lemma;          
+      }
+      // and then check rules
       lemma = numberNormalizer.normalize(lemma, tag);
-      if (lexicon.contains(lemma, lexPOSTag)) {
+      if (lexicon.contains(lemma, lexTag)) {
         cache.put(key, lemma);
         return lemma;          
       }
     }
     if (this.checkFlag(SUPERLATIVE)
         && tag.toLowerCase().matches(superlativeTag)) {
+      // check dictionary
+      if (dictionary.contains(lemma, lexTag)
+          && !lexTag.matches(dictionaryExclusions)) {
+        String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
+        return ranking.retrieveTopWord(lemmas);
+      }
+      // check lexicon
+      if (lexicon.contains(lemma, lexTag)) {
+        cache.put(key, lemma);
+        return lemma;          
+      }
+      // and then check rules
       lemma = superlativeNormalizer.normalize(lemma, tag);
-      if (lexicon.contains(lemma, lexPOSTag)) {
+      if (lexicon.contains(lemma, lexTag)) {
         cache.put(key, lemma);
         return lemma;          
       }
     }
     if (this.checkFlag(AUGMENTATIVE) &&
         tag.toLowerCase().matches(augmentativeTag)) {
+      // check dictionary
+      if (dictionary.contains(lemma, lexTag)
+          && !lexTag.matches(dictionaryExclusions)) {
+        String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
+        return ranking.retrieveTopWord(lemmas);
+      }
+      // check lexicon
+      if (lexicon.contains(lemma, lexTag)) {
+        cache.put(key, lemma);
+        return lemma;          
+      }
+      // and then check rules
       lemma = augmentativeNormalizer.normalize(lemma, tag);
-      if (lexicon.contains(lemma, lexPOSTag)) {
+      if (lexicon.contains(lemma, lexTag)) {
         cache.put(key, lemma);
         return lemma;          
       }
     }
     if (this.checkFlag(DIMINUTIVE)
         && tag.toLowerCase().matches(diminutiveTag)) {
+      // check dictionary
+      if (dictionary.contains(lemma, lexTag)
+          && !lexTag.matches(dictionaryExclusions)) {
+        String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
+        return ranking.retrieveTopWord(lemmas);
+      }
+      // check lexicon
+      if (lexicon.contains(lemma, lexTag)) {
+        cache.put(key, lemma);
+        return lemma;          
+      }
+      // and then check rules
       lemma = diminutiveNormalizer.normalize(lemma, tag);
-      if (lexicon.contains(lemma, lexPOSTag)) {
+      if (lexicon.contains(lemma, lexTag)) {
         cache.put(key, lemma);
         return lemma;          
       }
     }
-    else if (this.checkFlag(GENDER_DECLENSIONS)
+    if (this.checkFlag(GENDER_DECLENSIONS)
         && tag.toLowerCase().matches(genderTag)) {
+      // check dictionary
+      if (dictionary.contains(lemma, lexTag)
+          && !lexTag.matches(dictionaryExclusions)) {
+        String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
+        return ranking.retrieveTopWord(lemmas);
+      }
+      // check lexicon
+      if (lexicon.contains(lemma, lexTag)) {
+        cache.put(key, lemma);
+        return lemma;          
+      }
+      // and then check rules
       lemma = genderNormalizer.normalize(lemma, tag);
-      if (lexicon.contains(lemma, lexPOSTag)) {
+      if (lexicon.contains(lemma, lexTag)) {
         cache.put(key, lemma);
         return lemma;          
       }
     }
-    else if (this.checkFlag(GENDER_NAMES)
+    if (this.checkFlag(GENDER_NAMES)
         && tag.toLowerCase().matches(genderTag)) {
+      // check dictionary
+      if (dictionary.contains(lemma, lexTag)
+          && !lexTag.matches(dictionaryExclusions)) {
+        String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
+        return ranking.retrieveTopWord(lemmas);
+      }
+      // check lexicon
+      if (lexicon.contains(lemma, lexTag)) {
+        cache.put(key, lemma);
+        return lemma;          
+      }
+      // and then check rules
       lemma = genderNameNormalizer.normalize(lemma, tag);
-      if (lexicon.contains(lemma, lexPOSTag)) {
+      if (lexicon.contains(lemma, lexTag)) {
         cache.put(key, lemma);
         return lemma;          
       }
     }
     if (this.checkFlag(VERB)
         && tag.toLowerCase().matches(verbTag)) {
+      // check dictionary
+      if (dictionary.contains(lemma, lexTag)
+          && !lexTag.matches(dictionaryExclusions)) {
+        String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
+        return ranking.retrieveTopWord(lemmas);
+      }
+      // check lexicon
+      if (lexicon.contains(lemma, lexTag)) {
+        cache.put(key, lemma);
+        return lemma;          
+      }
+      // and then check rules
       lemma = verbNormalizer.normalize(lemma, tag);
-      if (lexicon.contains(lemma, lexPOSTag)) {
+      if (lexicon.contains(lemma, lexTag)) {
         cache.put(key, lemma);
         return lemma;          
       }

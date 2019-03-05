@@ -957,7 +957,7 @@
   <replacement target="condicion[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">condicionar</replacement>
   <replacement target="condiment[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">condimentar</replacement>
   <replacement target="condo[oó][aeêiío]" tag="v|v-fin|v-ger|v-pcp|v-inf">condoer</replacement>
-  <replacement target="conduz[aeiío]*" tag="v|v-fin|v-ger|v-pcp|v-inf">conduzir</replacement>
+  <replacement target="conduz[aeiío]?" tag="v|v-fin|v-ger|v-pcp|v-inf">conduzir</replacement>
   <replacement target="conect[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">conectar</replacement>
   <replacement target="confabul[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">confabular</replacement>
   <replacement target="confeccion[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">confeccionar</replacement>
@@ -1153,7 +1153,7 @@
   <replacement target="dedi[cq][aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">dedicar</replacement>
   <replacement target="dedilh[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">dedilhar</replacement>
   <replacement target="dedur[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">dedurar</replacement>
-  <replacement target="deduz[aeiío]*" tag="v|v-fin|v-ger|v-pcp|v-inf">deduzir</replacement>
+  <replacement target="deduz[aeiío]?" tag="v|v-fin|v-ger|v-pcp|v-inf">deduzir</replacement>
   <replacement target="defas[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">defasar</replacement>
   <replacement target="defe[cq][aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">defecar</replacement>
   <replacement target="defend[aeêiío]" tag="v|v-fin|v-ger|v-pcp|v-inf">defender</replacement>
@@ -1870,7 +1870,7 @@
   <replacement target="entrecruz[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">entrecruzar</replacement>
   <replacement target="entreg[aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">entregar</replacement>
   <replacement target="entrela[cç][aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">entrelaçar</replacement>
-  <replacement target="entreluz[aeiío]*" tag="v|v-fin|v-ger|v-pcp|v-inf">entreluzir</replacement>
+  <replacement target="entreluz[aeiío]?" tag="v|v-fin|v-ger|v-pcp|v-inf">entreluzir</replacement>
   <replacement target="entreo[iu][çv][aeiío]" tag="v|v-fin|v-ger|v-pcp|v-inf">entreouvir</replacement>
   <replacement target="entrete[cç][aeêiío]" tag="v|v-fin|v-ger|v-pcp|v-inf">entretecer</replacement>
   <replacement target="entrevist[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">entrevistar</replacement>
@@ -2481,7 +2481,7 @@
   <replacement target="individu[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">individuar</replacement>
   <replacement target="individualiz[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">individualizar</replacement>
   <replacement target="industrializ[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">industrializar</replacement>
-  <replacement target="induz[aeiío]*" tag="v|v-fin|v-ger|v-pcp|v-inf">induzir</replacement>
+  <replacement target="induz[aeiío]?" tag="v|v-fin|v-ger|v-pcp|v-inf">induzir</replacement>
   <replacement target="inebri[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">inebriar</replacement>
   <replacement target="infam[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">infamar</replacement>
   <replacement target="infect[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">infectar</replacement>
@@ -2564,7 +2564,7 @@
   <replacement target="intitul[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">intitular</replacement>
   <replacement target="intoxi[cq][aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">intoxicar</replacement>
   <replacement target="intrig[aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">intrigar</replacement>
-  <replacement target="introduz[aeiío]*" tag="v|v-fin|v-ger|v-pcp|v-inf">introduzir</replacement>
+  <replacement target="introduz[aeiío]?" tag="v|v-fin|v-ger|v-pcp|v-inf">introduzir</replacement>
   <replacement target="intromet[aeêiío]" tag="v|v-fin|v-ger|v-pcp|v-inf">intrometer</replacement>
   <replacement target="intu[aeiío]" tag="v|v-fin|v-ger|v-pcp|v-inf">intuir</replacement>
   <replacement target="intumes[cç][aeêiío]" tag="v|v-fin|v-ger|v-pcp|v-inf">intumescer</replacement>
@@ -2674,7 +2674,7 @@
   <replacement target="ludibri[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">ludibriar</replacement>
   <replacement target="lustr[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">lustrar</replacement>
   <replacement target="lut[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">lutar</replacement>
-  <replacement target="luz[aeiío]*" tag="v|v-fin|v-ger|v-pcp|v-inf">luzir</replacement>
+  <replacement target="luz[aeiío]?" tag="v|v-fin|v-ger|v-pcp|v-inf">luzir</replacement>
   <!-- M -->
   <replacement target="machu[cq][aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">machucar</replacement>
   <replacement target="macul[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">macular</replacement>
@@ -3136,7 +3136,7 @@
   <replacement target="procri[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">procriar</replacement>
   <replacement target="procur[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">procurar</replacement>
   <replacement target="prodigaliz[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">prodigalizar</replacement>
-  <replacement target="produz[aeiío]*" tag="v|v-fin|v-ger|v-pcp|v-inf">produzir</replacement>
+  <replacement target="produz[aeiío]?" tag="v|v-fin|v-ger|v-pcp|v-inf">produzir</replacement>
   <replacement target="profan[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">profanar</replacement>
   <replacement target="prof[ei]r[aeiío]" tag="v|v-fin|v-ger|v-pcp|v-inf">proferir</replacement>
   <replacement target="profess[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">professar</replacement>
@@ -3282,7 +3282,7 @@
   <replacement target="recompil[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">recompilar</replacement>
   <replacement target="reconcili[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">reconciliar</replacement>
   <replacement target="recondicion[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">recondicionar</replacement>
-  <replacement target="reconduz[aeiío]*" tag="v|v-fin|v-ger|v-pcp|v-inf">reconduzir</replacement>
+  <replacement target="reconduz[aeiío]?" tag="v|v-fin|v-ger|v-pcp|v-inf">reconduzir</replacement>
   <replacement target="reconect[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">reconectar</replacement>
   <replacement target="reconfigur[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">reconfigurar</replacement>
   <replacement target="reconfirm[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">reconfirmar</replacement>
@@ -3323,7 +3323,7 @@
   <replacement target="redobr[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">redobrar</replacement>
   <replacement target="redund[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">redundar</replacement>
   <replacement target="redupli[cq][aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">reduplicar</replacement>
-  <replacement target="reduz[aeiío]*" tag="v|v-fin|v-ger|v-pcp|v-inf">reduzir</replacement>
+  <replacement target="reduz[aeiío]?" tag="v|v-fin|v-ger|v-pcp|v-inf">reduzir</replacement>
   <replacement target="reedit[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">reeditar</replacement>
   <replacement target="reembar[cq][aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">reembarcar</replacement>
   <replacement target="reencarn[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">reencarnar</replacement>
@@ -3453,7 +3453,7 @@
   <replacement target="reprim[aeiío]" tag="v|v-fin|v-ger|v-pcp|v-inf">reprimir</replacement>
   <replacement target="repris[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">reprisar</replacement>
   <replacement target="reprocess[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">reprocessar</replacement>
-  <replacement target="reproduz[aeiío]*" tag="v|v-fin|v-ger|v-pcp|v-inf">reproduzir</replacement>
+  <replacement target="reproduz[aeiío]?" tag="v|v-fin|v-ger|v-pcp|v-inf">reproduzir</replacement>
   <replacement target="reprogram[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">reprogramar</replacement>
   <replacement target="reprov[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">reprovar</replacement>
   <replacement target="repudi[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">repudiar</replacement>
@@ -3618,7 +3618,7 @@
   <replacement target="sed[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">sedar</replacement>
   <replacement target="sedi[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">sediar</replacement>
   <replacement target="sediment[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">sedimentar</replacement>
-  <replacement target="seduz[aeiío]*" tag="v|v-fin|v-ger|v-pcp|v-inf">seduzir</replacement>
+  <replacement target="seduz[aeiío]?" tag="v|v-fin|v-ger|v-pcp|v-inf">seduzir</replacement>
   <replacement target="segment[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">segmentar</replacement>
   <replacement target="segred[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">segredar</replacement>
   <replacement target="segreg[aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">segregar</replacement>
@@ -3846,7 +3846,7 @@
   <replacement target="tra[cç][aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">traçar</replacement>
   <replacement target="trabalh[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">trabalhar</replacement>
   <replacement target="tracej[aáeo]" tag="v|v-fin|v-ger|v-pcp|v-inf">tracejar</replacement>
-  <replacement target="traduz[aeiío]*" tag="v|v-fin|v-ger|v-pcp|v-inf">traduzir</replacement>
+  <replacement target="traduz[aeiío]?" tag="v|v-fin|v-ger|v-pcp|v-inf">traduzir</replacement>
   <replacement target="trafeg[aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">trafegar</replacement>
   <replacement target="trafi[cq][aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">traficar</replacement>
   <replacement target="trag[aáou]" tag="v|v-fin|v-ger|v-pcp|v-inf">tragar</replacement>
@@ -4075,7 +4075,8 @@
   <replacement target="erect[ao]s?" tag="v|v-fin|v-ger|v-pcp|v-inf">erigir</replacement>
   <replacement target="escrit[ao]s?" tag="v|v-fin|v-ger|v-pcp|v-inf">escrever</replacement>
   <replacement target="escur[ao]s?" tag="v|v-fin|v-ger|v-pcp|v-inf">escurecer</replacement>
-  <replacement target="exaust[ao]s?" tag="v|v-fin|v-ger|v-pcp|v-inf">exaurir</replacement>
+  <replacement target="exaust[ao]s?" tag="v|v-fin|v-ger|v-pcp|v-inf">exaustar</replacement>
+  <replacement target="exaur[aeiío]?" tag="v|v-fin|v-ger|v-pcp|v-inf">exauri</replacement>
   <replacement target="express[ao]s?" tag="v|v-fin|v-ger|v-pcp|v-inf">expressar</replacement>
   <replacement target="expuls[ao]s?" tag="v|v-fin|v-ger|v-pcp|v-inf">expulsar</replacement>
   <replacement target="extint[ao]s?" tag="v|v-fin|v-ger|v-pcp|v-inf">extinguir</replacement>
