@@ -54,12 +54,12 @@ public class Lemmatizer {
   /**
    * This field...
    */
-  public static final int GENDER_DECLENSIONS = 8;   // Binary 00001000
+  public static final int GENDER = 8;               // Binary 00001000
 
   /**
    * This field...
    */
-  public static final int GENDER_NAMES = 16;        // Binary 00010000
+  public static final int GENDER_NAME = 16;         // Binary 00010000
 
   /**
    * This field...
@@ -532,12 +532,9 @@ public class Lemmatizer {
       if (dictionary.contains(lemma, lexTag)
           && !lexTag.matches(dictionaryExclusions)) {
         String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
-        return ranking.retrieveTopWord(lemmas);
-      }
-      // check lexicon
-      if (lexicon.contains(lemma, lexTag)) {
+        lemma = ranking.retrieveTopWord(lemmas);
         cache.put(key, lemma);
-        return lemma;          
+        return lemma;
       }
       // and then check rules
       lemma = adverbNormalizer.normalize(lemma, tag);
@@ -552,12 +549,9 @@ public class Lemmatizer {
       if (dictionary.contains(lemma, lexTag)
           && !lexTag.matches(dictionaryExclusions)) {
         String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
-        return ranking.retrieveTopWord(lemmas);
-      }
-      // check lexicon
-      if (lexicon.contains(lemma, lexTag)) {
+        lemma = ranking.retrieveTopWord(lemmas);
         cache.put(key, lemma);
-        return lemma;          
+        return lemma;
       }
       // and then check rules
       lemma = numberNormalizer.normalize(lemma, tag);
@@ -572,12 +566,9 @@ public class Lemmatizer {
       if (dictionary.contains(lemma, lexTag)
           && !lexTag.matches(dictionaryExclusions)) {
         String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
-        return ranking.retrieveTopWord(lemmas);
-      }
-      // check lexicon
-      if (lexicon.contains(lemma, lexTag)) {
+        lemma = ranking.retrieveTopWord(lemmas);
         cache.put(key, lemma);
-        return lemma;          
+        return lemma;
       }
       // and then check rules
       lemma = superlativeNormalizer.normalize(lemma, tag);
@@ -592,12 +583,9 @@ public class Lemmatizer {
       if (dictionary.contains(lemma, lexTag)
           && !lexTag.matches(dictionaryExclusions)) {
         String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
-        return ranking.retrieveTopWord(lemmas);
-      }
-      // check lexicon
-      if (lexicon.contains(lemma, lexTag)) {
+        lemma = ranking.retrieveTopWord(lemmas);
         cache.put(key, lemma);
-        return lemma;          
+        return lemma;
       }
       // and then check rules
       lemma = augmentativeNormalizer.normalize(lemma, tag);
@@ -612,12 +600,9 @@ public class Lemmatizer {
       if (dictionary.contains(lemma, lexTag)
           && !lexTag.matches(dictionaryExclusions)) {
         String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
-        return ranking.retrieveTopWord(lemmas);
-      }
-      // check lexicon
-      if (lexicon.contains(lemma, lexTag)) {
+        lemma = ranking.retrieveTopWord(lemmas);
         cache.put(key, lemma);
-        return lemma;          
+        return lemma;
       }
       // and then check rules
       lemma = diminutiveNormalizer.normalize(lemma, tag);
@@ -626,18 +611,15 @@ public class Lemmatizer {
         return lemma;          
       }
     }
-    if (this.checkFlag(GENDER_DECLENSIONS)
+    if (this.checkFlag(GENDER)
         && tag.toLowerCase().matches(genderTag)) {
       // check dictionary
       if (dictionary.contains(lemma, lexTag)
           && !lexTag.matches(dictionaryExclusions)) {
         String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
-        return ranking.retrieveTopWord(lemmas);
-      }
-      // check lexicon
-      if (lexicon.contains(lemma, lexTag)) {
+        lemma = ranking.retrieveTopWord(lemmas);
         cache.put(key, lemma);
-        return lemma;          
+        return lemma;
       }
       // and then check rules
       lemma = genderNormalizer.normalize(lemma, tag);
@@ -646,18 +628,15 @@ public class Lemmatizer {
         return lemma;          
       }
     }
-    if (this.checkFlag(GENDER_NAMES)
+    if (this.checkFlag(GENDER_NAME)
         && tag.toLowerCase().matches(genderTag)) {
       // check dictionary
       if (dictionary.contains(lemma, lexTag)
           && !lexTag.matches(dictionaryExclusions)) {
         String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
-        return ranking.retrieveTopWord(lemmas);
-      }
-      // check lexicon
-      if (lexicon.contains(lemma, lexTag)) {
+        lemma = ranking.retrieveTopWord(lemmas);
         cache.put(key, lemma);
-        return lemma;          
+        return lemma;
       }
       // and then check rules
       lemma = genderNameNormalizer.normalize(lemma, tag);
@@ -672,12 +651,9 @@ public class Lemmatizer {
       if (dictionary.contains(lemma, lexTag)
           && !lexTag.matches(dictionaryExclusions)) {
         String[] lemmas = dictionary.retrieveLemmas(lemma, lexTag);
-        return ranking.retrieveTopWord(lemmas);
-      }
-      // check lexicon
-      if (lexicon.contains(lemma, lexTag)) {
+        lemma = ranking.retrieveTopWord(lemmas);
         cache.put(key, lemma);
-        return lemma;          
+        return lemma;
       }
       // and then check rules
       lemma = verbNormalizer.normalize(lemma, tag);
